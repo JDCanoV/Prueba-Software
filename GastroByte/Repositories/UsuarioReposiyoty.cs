@@ -16,11 +16,12 @@ namespace GastroByte.Repositories
             int comando = 0;
             DBContextUtility Connection = new DBContextUtility();
             Connection.Connect();
-            string SQL = "INSERT INTO Gastrobyte.dbo.[Usuario] (id_estado,nombre,contraseña) " +
-                         "VALUES ( @id_estado, @nombre, @contraseña);";
+            string SQL = "INSERT INTO Gastrobyte.dbo.[Usuario] (id_rol,id_estado,nombre,contraseña) " +
+                          "VALUES ( @id_rol,@id_estado, @nombre, @contraseña);";
 
             using (SqlCommand command = new SqlCommand(SQL, Connection.CONN()))
             {
+                command.Parameters.AddWithValue("@id_rol", user.id_rol);
                 command.Parameters.AddWithValue("@id_estado", user.id_estado);
                 command.Parameters.AddWithValue("@nombre", user.nombre);
                 command.Parameters.AddWithValue("@contraseña", user.contrasena);
