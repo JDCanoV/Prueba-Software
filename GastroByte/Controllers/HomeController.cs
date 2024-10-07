@@ -14,6 +14,7 @@ namespace GastroByte.Controllers
             return View();
         }
 
+
         public ActionResult About()
         {
             DBContextUtility dbUtility = new DBContextUtility();

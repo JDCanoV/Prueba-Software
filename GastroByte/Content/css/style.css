@@ -11,12 +11,26 @@
 *
 * ======================================================= */
 body {
-  font-family: "Lato", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
-  background: #fff;
+   
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    background: #fff;
+}
+
+.body-content {
+    margin-top: 27px; /* Ajusta el valor seg�n sea necesario */
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    background: #fff;
+    
+    padding: 0; /* Elimina el relleno (opcional) */
+    width: 100vw; /* Asegura que ocupe el ancho completo de la ventana */
 }
 
 #page {
@@ -108,13 +122,21 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 20px 0;
   }
 }
+
 .gtco-nav #gtco-logo {
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+
 }
+#gtco-logo a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Asegura que el color del texto sea el mismo que el del contenedor */
+}
+
 .gtco-nav #gtco-logo em {
   color: #FBB448;
 }
@@ -664,6 +686,7 @@ form label {
   color: #FBB448 !important;
 }
 
+
 #gtco-header .display-tc,
 #gtco-counter .display-tc,
 .gtco-cover .display-tc {
@@ -940,7 +963,6 @@ form label {
 #gtco-subscribe .form-control {
   background: transparent;
   color: #fff;
-  font-size: 16px !important;
   width: 100%;
   border: 2px solid rgba(255, 255, 255, 0.2) !important;
   -webkit-transition: 0.5s;
@@ -980,9 +1002,10 @@ form label {
   width: 100% !important;
   margin-bottom: 10px;
 }
-#gtco-subscribe .form-inline .form-group .form-control {
-  width: 100%;
-}
+    #gtco-subscribe .form-inline .form-group .form-control {
+        width: 100%; /* Mantiene el ancho del campo al 100% */
+        
+    }
 #gtco-subscribe .gtco-heading {
   margin-bottom: 30px;
 }
@@ -1339,9 +1362,11 @@ form label {
 }
 
 .btn-primary {
-  background: #FBB448;
-  color: #fff;
-  border: 2px solid #FBB448 !important;
+    background: #FBB448;
+    color: #fff;
+    border: 2px solid #FBB448 !important;
+    font-size: 16px; /* Tama�o de la fuente */
+   
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #fcbe61 !important;
@@ -1492,17 +1517,17 @@ form label {
   opacity: 1;
 }
 
-.form-control {
-  box-shadow: none;
-  background: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 46px;
-  font-size: 16px;
-  font-weight: 300;
-  padding-left: 15px;
-  padding-right: 15px;
+.form-control-1 {
+    box-shadow: none;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 46px;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-.form-control:active, .form-control:focus {
+.form-control-1:active, .form-control:focus {
   outline: none;
   box-shadow: none;
   border-color: #FBB448;
