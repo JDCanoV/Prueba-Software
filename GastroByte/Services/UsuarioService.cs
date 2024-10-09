@@ -16,7 +16,14 @@ namespace GastroByte.Services
             UsuarioReposiyoty userReposiyoty = new UsuarioReposiyoty();
             try
             {
-                
+                // Primero, verifica si la contraseña es válida (no vacía)
+                if (string.IsNullOrEmpty(userModel.contrasena))
+                {
+                    responseUserDto.Response = 0;
+                    
+                    return responseUserDto;
+                }
+
                 userModel.contrasena = EncryptUtility.HashPassword(userModel.contrasena);
 
                 if (userReposiyoty.BuscarUsuario(userModel.nombre))

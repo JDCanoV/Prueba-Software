@@ -31,7 +31,8 @@ namespace GastroByte.Dtos
         public string correo_electronico { get; set; } = string.Empty;
 
 
-        
+        [Required(ErrorMessage = "La contraseña es obligatoria.")]
+        [DataType(DataType.Password)]
         public string contrasena { get; set; } = string.Empty;
 
         public int id_estado { get; set; }
