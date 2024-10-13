@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\utilities\\dbcontextutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\utilities\\dbcontextutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\repositories\\usuarioreposiyoty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\repositories\\usuarioreposiyoty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,6 +41,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\utilities\\dbcontextutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\utilities\\dbcontextutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +58,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "GastroByte\\Services\\UsuarioService.cs",
@@ -70,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ReservaService.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\ReservaService.cs",
               "RelativeDocumentMoniker": "GastroByte\\Services\\ReservaService.cs",
@@ -82,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UsuarioReposiyoty.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Repositories\\UsuarioReposiyoty.cs",
               "RelativeDocumentMoniker": "GastroByte\\Repositories\\UsuarioReposiyoty.cs",
@@ -95,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ReservaRepository.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Repositories\\ReservaRepository.cs",
               "RelativeDocumentMoniker": "GastroByte\\Repositories\\ReservaRepository.cs",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "UsuarioDto.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Dtos\\UsuarioDto.cs",
               "RelativeDocumentMoniker": "GastroByte\\Dtos\\UsuarioDto.cs",
@@ -119,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "ReservaDto.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Dtos\\ReservaDto.cs",
               "RelativeDocumentMoniker": "GastroByte\\Dtos\\ReservaDto.cs",
@@ -131,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "GastroByte\\Controllers\\UsuarioController.cs",
@@ -143,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "GastroByte\\Controllers\\HomeController.cs",
@@ -155,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "DBContextUtility.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Utilities\\DBContextUtility.cs",
               "RelativeDocumentMoniker": "GastroByte\\Utilities\\DBContextUtility.cs",
@@ -163,12 +163,11 @@
               "RelativeToolTip": "GastroByte\\Utilities\\DBContextUtility.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T19:01:35.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T19:01:35.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Usuario\\Create.cshtml",
               "RelativeDocumentMoniker": "GastroByte\\Views\\Usuario\\Create.cshtml",
@@ -186,7 +185,7 @@
               "RelativeDocumentMoniker": "GastroByte\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "GastroByte\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-13T19:01:10.695Z",
               "EditorCaption": ""
