@@ -15,7 +15,11 @@ namespace GastroByte.Controllers
         {
             return View();
         }
-
+        public ActionResult Editar()
+        {
+            return View();
+        }
+       
         // GET: Usuario/Details/5
         public ActionResult Details(int id)
         {
