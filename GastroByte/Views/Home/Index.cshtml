@@ -1,4 +1,5 @@
-﻿@{
+﻿@model GastroByte.Dtos.ReservaDto
+@{
     Layout = "~/Views/Shared/_Layout.cshtml"; //cano y valentina
 }
 
@@ -6,7 +7,7 @@
 
 <html>
 <head>
-   
+
 
 </head>
 <body>
@@ -16,69 +17,71 @@
     <div id="page">
 
         <!-- <div class="page-inner"> -->
-        
+
 
         <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('@Url.Content("~/images/img_bg_1.jpg")')" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 text-left">
-
                         <div class="row row-mt-15em">
                             <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-                                
                                 <h1 class="cursive-font">¡Todo en buen gusto!</h1>
                             </div>
                             <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
                                 <div class="form-wrap">
                                     <div class="tab">
-
                                         <div class="tab-content">
                                             <div class="tab-content-inner active" data-content="signup">
                                                 <h3 class="cursive-font">Reservación de Mesa</h3>
-                                                <form action="#">
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="activities">Personas</label>
-                                                            <select name="#" id="activities" class="form-control">
-                                                                <option value="">Personas</option>
-                                                                <option value="">1</option>
-                                                                <option value="">2</option>
-                                                                <option value="">3</option>
-                                                                <option value="">4</option>
-                                                                <option value="">5+</option>
-                                                            </select>
+
+                                                <!-- Inicia el formulario -->
+                                                @using (Html.BeginForm())
+                                                {
+                                                    @Html.AntiForgeryToken()
+
+                                                    <div class="form-group">
+                                                        @Html.Label("Gmail:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                                                         </div>
                                                     </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="date-start">Fecha</label>
-                                                            <input type="text" id="date" class="form-control">
+
+                                                    <div class="form-group">
+                                                        @Html.Label("Documento:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.documento, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.documento, "", new { @class = "text-danger" })
                                                         </div>
                                                     </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="date-start">Hora</label>
-                                                            <input type="text" id="time" class="form-control">
+
+                                                    <div class="form-group">
+                                                        @Html.Label("Fecha:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
                                                         </div>
                                                     </div>
 
                                                     <div class="row form-group">
                                                         <div class="col-md-12">
-                                                            <input type="submit" class="btn btn-primary btn-block" value="Reservar Ahora">
+                                                            <input type="submit" class="btn btn-primary btn-block" value="Reservar Ahora" />
                                                         </div>
                                                     </div>
-                                                </form>
+                                                }
+                                                <!-- Fin del formulario -->
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+
         </header>
 
         <div class="gtco-section">
