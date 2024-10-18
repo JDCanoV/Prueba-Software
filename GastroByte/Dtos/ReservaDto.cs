@@ -10,7 +10,7 @@ namespace GastroByte.Dtos
     {
         public int id_reservacion { get; set; }
         public int id_usuario { get; set; }
-        public int numero_personas { get; set; }
+        public string numero_personas { get; set; } = string.Empty;
 
         public string nombre { get; set; } = string.Empty;
 
@@ -19,7 +19,7 @@ namespace GastroByte.Dtos
         public string fecha { get; set; } = string.Empty;
         public string hora { get; set; } = string.Empty;
         public int id_estado { get; set; }
-        public int mesa { get; set; }
+        public string mesa { get; set; } = string.Empty;
         public int Response { get; set; }
         public string Message { get; set; } = string.Empty;
         [Required(ErrorMessage = "El correo electrónico es obligatorio.")]

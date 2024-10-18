@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Dtos\ReservaDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
@@ -318,6 +319,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\index.cshtml" />
+<<<<<<< Updated upstream
+=======
+    <Content Include="Views\Usuario\Editar.cshtml" />
+    <Content Include="Views\Reservas\Index.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
