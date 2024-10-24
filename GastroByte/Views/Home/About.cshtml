@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<h1>Estado de la Conexión</h1>
+
+@if (ViewBag.ConnectionStatus == "Todo Melo")
+{
+    <h2 style="color:green;">@ViewBag.ConnectionStatus</h2>
+}
+else
+{
+    <h2 style="color:red;">@ViewBag.ConnectionStatus</h2>
+}
