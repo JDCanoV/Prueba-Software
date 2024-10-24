@@ -15,6 +15,10 @@ namespace GastroByte.Controllers
         {
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
         public ActionResult Editar()
         {
             return View();
@@ -104,6 +108,51 @@ namespace GastroByte.Controllers
         {
             return View();
         }
+
+        // POST: Usuario/Login
+        [HttpPost]
+        public ActionResult Login(UsuarioDto loginUser)
+        // POST: Usuario/Login
+        {
+            if (loginUser == null)
+            {
+                loginUser = new UsuarioDto();
+                loginUser.Message = "El modelo de usuario no se envió correctamente.";
+                return View(loginUser);
+            }
+
+            try
+            {
+                UsuarioService userService = new UsuarioService();
+                UsuarioDto userResponse = userService.LoginUser(loginUser);
+
+                if (userResponse.Response == 1)
+                {
+                    // Establece la sesión con los datos del usuario
+                    Session["UserID"] = userResponse.id_usuario;
+                    Session["UserName"] = userResponse.nombre;
+                    Session["UserRole"] = userResponse.id_rol;
+
+                    // Redirige al dashboard o página principal
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(userResponse.Message))
+                    {
+                        userResponse.Message = "Credenciales incorrectas. Inténtalo nuevamente.";
+                    }
+                    return View(userResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                loginUser.Message = "Ocurrió un error inesperado: " + ex.Message;
+                loginUser.Response = 0;
+                return View(loginUser);
+            }
+        }
+
 
         // POST: Usuario/Delete/5
         [HttpPost]

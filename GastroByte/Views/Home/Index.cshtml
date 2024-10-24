@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml"; //cano y valentina
 }
 
+
 <!DOCTYPE HTML>
 
 <html>
@@ -11,6 +12,11 @@
 
 </head>
 <body>
+    @if (Session["UserID"] != null)
+    {
+        <p>Bienvenido, @Session["UserName"]</p>}
+    
+
 
     <div class="gtco-loader"></div>
 

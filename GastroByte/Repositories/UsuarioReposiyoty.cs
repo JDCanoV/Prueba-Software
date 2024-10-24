@@ -45,6 +45,37 @@ namespace GastroByte.Repositories
             Connection.Disconnect();
             return comando;
         }
+        public UsuarioDto BuscarUsuarioPorNumeroDocumento(string numeroDocumento)
+        {
+            UsuarioDto user = null;
+            string SQL = "SELECT id_usuario, nombre, contraseña, id_rol, id_estado " +
+                         "FROM Gastrobyte.dbo.[Usuario] WHERE numero_documento = @numero_documento";
+            DBContextUtility Connection = new DBContextUtility();
+            Connection.Connect();
+
+            using (SqlCommand command = new SqlCommand(SQL, Connection.CONN()))
+            {
+                command.Parameters.AddWithValue("@numero_documento", numeroDocumento);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        user = new UsuarioDto
+                        {
+                            id_usuario = (int)reader["id_usuario"],
+                            nombre = reader["nombre"].ToString(),
+                            contrasena = reader["contraseña"].ToString(),
+                            id_rol = (int)reader["id_rol"],
+                            id_estado = (int)reader["id_estado"]
+                        };
+                    }
+                }
+            }
+            Connection.Disconnect();
+            return user;
+        }
+
+
 
         public bool BuscarUsuario(string username)
         {

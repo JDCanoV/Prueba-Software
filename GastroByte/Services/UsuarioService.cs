@@ -56,7 +56,51 @@ namespace GastroByte.Services
                 return responseUserDto;
             }
         }
+        public UsuarioDto LoginUser(UsuarioDto loginUser)
+        {
+           {
+                UsuarioDto responseUserDto = new UsuarioDto();
+                UsuarioReposiyoty userReposiyoty = new UsuarioReposiyoty();
 
-        
-}
+                try
+                {
+                    var storedUser = userReposiyoty.BuscarUsuarioPorNumeroDocumento(loginUser.numero_documento);
+
+                    if (storedUser == null)
+                    {
+                        responseUserDto.Response = 0;
+                        responseUserDto.Message = "Usuario no encontrado.";
+                        return responseUserDto;
+                    }
+
+                    // Verifica la contraseña con bcrypt
+                    if (EncryptUtility.VerifyPassword(loginUser.contrasena, storedUser.contrasena))
+                    {
+                        // Asigna los valores necesarios al DTO de respuesta
+                        responseUserDto.Response = 1;  // Login exitoso
+                        responseUserDto.id_usuario = storedUser.id_usuario; // Asegúrate de que se está asignando el ID
+                        responseUserDto.nombre = storedUser.nombre; // Asegúrate de que se está asignando el nombre
+                        responseUserDto.id_rol = storedUser.id_rol; // Asegúrate de que se está asignando el rol
+                    }
+                    else
+                    {
+                        responseUserDto.Response = 0;
+                        responseUserDto.Message = "Contraseña incorrecta.";
+                    }
+
+                    return responseUserDto;
+                }
+                catch (Exception e)
+                {
+                    responseUserDto.Response = 0;
+                    responseUserDto.Message = e.InnerException?.ToString() ?? e.Message;
+                    return responseUserDto;
+                }
+            }
+
+
+
+
+        }
+    }
 }

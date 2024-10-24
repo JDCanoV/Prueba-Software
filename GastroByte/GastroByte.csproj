@@ -145,6 +145,7 @@
     <Compile Include="Repositories\UsuarioReposiyoty.cs" />
     <Compile Include="Services\ReservaService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Utilities\AuthorizeRoleAttribute.cs" />
     <Compile Include="Utilities\DBContextUtility.cs" />
     <Compile Include="Utilities\EncryptUtility.cs" />
   </ItemGroup>
@@ -319,6 +320,7 @@
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\index.cshtml" />
     <Content Include="Views\Usuario\Editar.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
