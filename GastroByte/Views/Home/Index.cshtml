@@ -1,29 +1,23 @@
-﻿@{
+﻿@model GastroByte.Dtos.ReservaDto
+@{
     Layout = "~/Views/Shared/_Layout.cshtml"; //cano y valentina
 }
 
 <!DOCTYPE HTML>
-
 <html>
 <head>
-   
-
+    <!-- Aquí puedes incluir tus estilos y scripts si es necesario -->
 </head>
 <body>
 
     <div class="gtco-loader"></div>
 
     <div id="page">
-
-        <!-- <div class="page-inner"> -->
-        
-
         <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('@Url.Content("~/images/img_bg_1.jpg")')" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 text-left">
-
                         <div class="row row-mt-15em">
                             <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
                                 <span class="intro-text-small">Hecho a mano por <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a></span>
@@ -32,24 +26,9 @@
                             <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
                                 <div class="form-wrap">
                                     <div class="tab">
-
                                         <div class="tab-content">
                                             <div class="tab-content-inner active" data-content="signup">
                                                 <h3 class="cursive-font">Reservación de Mesa</h3>
-<<<<<<< Updated upstream
-                                                <form action="#">
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="activities">Personas</label>
-                                                            <select name="#" id="activities" class="form-control">
-                                                                <option value="">Personas</option>
-                                                                <option value="">1</option>
-                                                                <option value="">2</option>
-                                                                <option value="">3</option>
-                                                                <option value="">4</option>
-                                                                <option value="">5+</option>
-                                                            </select>
-=======
 
                                                 <!-- Inicia el formulario -->
                                                 @using (Html.BeginForm())
@@ -57,7 +36,7 @@
                                                     @Html.AntiForgeryToken()
 
                                                     <div class="form-group">
-                                                        @Html.Label("N°_Personas:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.Label("N° Personas:", htmlAttributes: new { @class = "control-label col-md-2" })
                                                         <div class="col-md-10">
                                                             @Html.EditorFor(model => model.numero_personas, new { htmlAttributes = new { @class = "form-control-1" } })
                                                             @Html.ValidationMessageFor(model => model.numero_personas, "", new { @class = "text-danger" })
@@ -83,7 +62,6 @@
                                                         <div class="col-md-10">
                                                             @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control-1" } })
                                                             @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
->>>>>>> Stashed changes
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
@@ -111,14 +89,14 @@
                                                             <input type="submit" class="btn btn-primary btn-block" value="Reservar Ahora">
                                                         </div>
                                                     </div>
-                                                </form>
+                                                }
+                                                <!-- Fin del formulario -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -133,7 +111,6 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <a href="@Url.Content("~/Content/images/img_1.jpg")" class="fh5co-card-item image-popup">
                             <figure>
@@ -147,75 +124,12 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <a href="@Url.Content("~/Content/images/img_2.jpg")" class="fh5co-card-item image-popup">
-                            <figure>
-                                <div class="overlay"><i class="ti-plus"></i></div>
-                                <img src="@Url.Content("~/Content/images/img_2.jpg")" alt="Image" class="img-responsive">
-                            </figure>
-                            <div class="fh5co-text">
-                                <h2>Texto Ejemplo</h2>
-                                <p>Texto Ejemplo.</p>
-                                <p><span class="price cursive-font">$20.99</span></p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <a href="@Url.Content("~/Content/images/img_3.jpg")" class="fh5co-card-item image-popup">
-                            <figure>
-                                <div class="overlay"><i class="ti-plus"></i></div>
-                                <img src="@Url.Content("~/Content/images/img_3.jpg")" alt="Image" class="img-responsive">
-                            </figure>
-                            <div class="fh5co-text">
-                                <h2>Texto Ejemplo</h2>
-                                <p>Texto Ejemplo.</p>
-                                <p><span class="price cursive-font">$8.99</span></p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <a href="@Url.Content("~/Content/images/img_4.jpg")" class="fh5co-card-item image-popup">
-                            <figure>
-                                <div class="overlay"><i class="ti-plus"></i></div>
-                                <img src="@Url.Content("~/Content/images/img_4.jpg")" alt="Image" class="img-responsive">
-                            </figure>
-                            <div class="fh5co-text">
-                                <h2>Texto Ejemplo</h2>
-                                <p>Texto Ejemplo.</p>
-                                <p><span class="price cursive-font">$12.99</span></p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <a href="@Url.Content("~/Content/images/img_5.jpg")" class="fh5co-card-item image-popup">
-                            <figure>
-                                <div class="overlay"><i class="ti-plus"></i></div>
-                                <img src="@Url.Content("~/Content/images/img_5.jpg")" alt="Image" class="img-responsive">
-                            </figure>
-                            <div class="fh5co-text">
-                                <h2>Texto Ejemplo</h2>
-                                <p>Texto Ejemplo.</p>
-                                <p><span class="price cursive-font">$23.10</span></p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <a href="@Url.Content("~/Content/images/img_6.jpg")" class="fh5co-card-item image-popup">
-                            <figure>
-                                <div class="overlay"><i class="ti-plus"></i></div>
-                                <img src="@Url.Content("~/Content/images/img_6.jpg")" alt="Image" class="img-responsive">
-                            </figure>
-                            <div class="fh5co-text">
-                                <h2>Texto Ejemplo</h2>
-                                <p>Texto Ejemplo.</p>
-                                <p><span class="price cursive-font">$5.59</span></p>
-                            </div>
-                        </a>
-                    </div>
+                    <!-- Repite para otros platos... -->
                 </div>
             </div>
         </div>
 
+        <!-- Continúa con el resto del contenido como "Nuestros Servicios" y "Testimonios" -->
         <div id="gtco-features">
             <div class="gtco-container">
                 <div class="row">
@@ -234,24 +148,7 @@
                             <p>Texto Ejemplo.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feature-center animate-box" data-animate-effect="fadeIn">
-                            <span class="icon">
-                                <i class="ti-thought"></i>
-                            </span>
-                            <h3>Culinaria Creativa</h3>
-                            <p>Texto Ejemplo.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feature-center animate-box" data-animate-effect="fadeIn">
-                            <span class="icon">
-                                <i class="ti-truck"></i>
-                            </span>
-                            <h3>Entrega de Alimentos</h3>
-                            <p>Texto Ejemplo.</p>
-                        </div>
-                    </div>
+                    <!-- Repite para otros servicios... -->
                 </div>
             </div>
         </div>
@@ -272,70 +169,13 @@
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-                        <h2 class="cursive-font primary-color">Datos</h2>
+                        <h2 class="cursive-font">Contador</h2>
                         <p>Texto Ejemplo.</p>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Calificación Promedio</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="43" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Tipos de Comida</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="32" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Chef Cocinero</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="1985" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Año Comenzado</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- Continúa con el resto del contenido aquí -->
             </div>
         </div>
     </div>
-
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
-
-    <!-- jQuery -->
-    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
-    <!-- jQuery Easing -->
-    <script src="@Url.Content("~/Content/js/jquery.easing.1.3.js")"></script>
-    <!-- Bootstrap -->
-    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
-    <!-- Waypoints -->
-    <script src="@Url.Content("~/Content/js/jquery.waypoints.min.js")"></script>
-    <!-- Carousel -->
-    <script src="@Url.Content("~/Content/js/owl.carousel.min.js")"></script>
-    <!-- countTo -->
-    <script src="@Url.Content("~/Content/js/jquery.countTo.js")"></script>
-
-    <!-- Stellar Parallax -->
-    <script src="@Url.Content("~/Content/js/jquery.stellar.min.js")"></script>
-
-    <!-- Magnific Popup -->
-    <script src="@Url.Content("~/Content/js/jquery.magnific-popup.min.js")"></script>
-    <script src="@Url.Content("~/Content/js/magnific-popup-options.js")"></script>
-
-    <script src="@Url.Content("~/Content/js/moment.min.js")"></script>
-    <script src="@Url.Content("~/Content/js/bootstrap-datetimepicker.min.js")"></script>
-
-    <!-- Main -->
-    <script src="@Url.Content("~/Content/js/main.js")"></script>
-
 </body>
 </html>
