@@ -138,12 +138,15 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Dtos\carlos.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
+    <Compile Include="Dtos\ReservaDto..cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UsuarioReposiyoty.cs" />
+    <Compile Include="Repositories\ReservaRepository.cs" />
     <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Services\ReservaService.cs" />
     <Compile Include="Utilities\DBContextUtility.cs" />
     <Compile Include="Utilities\EncryptUtility.cs" />
   </ItemGroup>
