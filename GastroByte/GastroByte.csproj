@@ -136,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Dtos\joselito.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="Dtos\ReservaDto.cs" />
     <Compile Include="Global.asax.cs">
