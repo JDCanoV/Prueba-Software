@@ -36,6 +36,7 @@
                                         <div class="tab-content">
                                             <div class="tab-content-inner active" data-content="signup">
                                                 <h3 class="cursive-font">Reservación de Mesa</h3>
+<<<<<<< Updated upstream
                                                 <form action="#">
                                                     <div class="row form-group">
                                                         <div class="col-md-12">
@@ -48,6 +49,41 @@
                                                                 <option value="">4</option>
                                                                 <option value="">5+</option>
                                                             </select>
+=======
+
+                                                <!-- Inicia el formulario -->
+                                                @using (Html.BeginForm())
+                                                {
+                                                    @Html.AntiForgeryToken()
+
+                                                    <div class="form-group">
+                                                        @Html.Label("N°_Personas:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.numero_personas, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.numero_personas, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        @Html.Label("Mesa:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.mesa, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.mesa, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        @Html.Label("Nombre:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        @Html.Label("Gmail:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+>>>>>>> Stashed changes
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
@@ -60,6 +96,13 @@
                                                         <div class="col-md-12">
                                                             <label for="date-start">Hora</label>
                                                             <input type="text" id="time" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        @Html.Label("Hora:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.hora, new { htmlAttributes = new { @class = "form-control-1" } })
+                                                            @Html.ValidationMessageFor(model => model.hora, "", new { @class = "text-danger" })
                                                         </div>
                                                     </div>
 
@@ -86,7 +129,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
                         <h2 class="cursive-font primary-color">Platos Populares</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Texto Ejemplo.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -99,7 +142,7 @@
                             </figure>
                             <div class="fh5co-text">
                                 <h2>Champiñones Frescos</h2>
-                                <p>Lejos, detrás de las montañas, lejos de los países Vokalia..</p>
+                                <p>Texto Ejemplo.</p>
                                 <p><span class="price cursive-font">$19.15</span></p>
                             </div>
                         </a>
@@ -111,8 +154,8 @@
                                 <img src="@Url.Content("~/Content/images/img_2.jpg")" alt="Image" class="img-responsive">
                             </figure>
                             <div class="fh5co-text">
-                                <h2>Tostada de Queso y Ajo</h2>
-                                <p>Lejos, detrás de las montañas, lejos de los países Vokalia..</p>
+                                <h2>Texto Ejemplo</h2>
+                                <p>Texto Ejemplo.</p>
                                 <p><span class="price cursive-font">$20.99</span></p>
                             </div>
                         </a>
@@ -124,8 +167,8 @@
                                 <img src="@Url.Content("~/Content/images/img_3.jpg")" alt="Image" class="img-responsive">
                             </figure>
                             <div class="fh5co-text">
-                                <h2>Ensalada de Pollo a la Parrilla</h2>
-                                <p>Lejos, detrás de las montañas, lejos de los países Vokalia..</p>
+                                <h2>Texto Ejemplo</h2>
+                                <p>Texto Ejemplo.</p>
                                 <p><span class="price cursive-font">$8.99</span></p>
                             </div>
                         </a>
@@ -137,8 +180,8 @@
                                 <img src="@Url.Content("~/Content/images/img_4.jpg")" alt="Image" class="img-responsive">
                             </figure>
                             <div class="fh5co-text">
-                                <h2>Huevo Orgánico</h2>
-                                <p>Lejos, detrás de las montañas, lejos de los países Vokalia..</p>
+                                <h2>Texto Ejemplo</h2>
+                                <p>Texto Ejemplo.</p>
                                 <p><span class="price cursive-font">$12.99</span></p>
                             </div>
                         </a>
@@ -150,8 +193,8 @@
                                 <img src="@Url.Content("~/Content/images/img_5.jpg")" alt="Image" class="img-responsive">
                             </figure>
                             <div class="fh5co-text">
-                                <h2>Sopa de Tomate con Pollo</h2>
-                                <p>Lejos, detrás de las montañas, lejos de los países Vokalia..</p>
+                                <h2>Texto Ejemplo</h2>
+                                <p>Texto Ejemplo.</p>
                                 <p><span class="price cursive-font">$23.10</span></p>
                             </div>
                         </a>
@@ -163,8 +206,8 @@
                                 <img src="@Url.Content("~/Content/images/img_6.jpg")" alt="Image" class="img-responsive">
                             </figure>
                             <div class="fh5co-text">
-                                <h2>Ensalada con Pollo Crujiente</h2>
-                                <p>Lejos, detrás de las montañas, lejos de los países Vokalia..</p>
+                                <h2>Texto Ejemplo</h2>
+                                <p>Texto Ejemplo.</p>
                                 <p><span class="price cursive-font">$5.59</span></p>
                             </div>
                         </a>
@@ -178,7 +221,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
                         <h2 class="cursive-font">Nuestros Servicios</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Texto Ejemplo.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -188,7 +231,7 @@
                                 <i class="ti-face-smile"></i>
                             </span>
                             <h3>Personas Felices</h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <p>Texto Ejemplo.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -197,7 +240,7 @@
                                 <i class="ti-thought"></i>
                             </span>
                             <h3>Culinaria Creativa</h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <p>Texto Ejemplo.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -206,7 +249,7 @@
                                 <i class="ti-truck"></i>
                             </span>
                             <h3>Entrega de Alimentos</h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <p>Texto Ejemplo.</p>
                         </div>
                     </div>
                 </div>
@@ -219,7 +262,7 @@
                 <div class="display-t">
                     <div class="display-tc">
                         <h1>&ldquo; ¡Su alta calidad de servicio me hace volver una y otra vez! &rdquo;</h1>
-                        <p>&mdash; John Doe, CEO de XYZ Co.</p>
+                        <p>&mdash; Oscar Paternina.</p>
                     </div>
                 </div>
             </div>
@@ -229,8 +272,8 @@
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-                        <h2 class="cursive-font primary-color">Datos Divertidos</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <h2 class="cursive-font primary-color">Datos</h2>
+                        <p>Texto Ejemplo.</p>
                     </div>
                 </div>
 
@@ -262,67 +305,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="gtco-subscribe">
-            <div class="gtco-container">
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                        <h2 class="cursive-font">Suscríbete</h2>
-                        <p>Sé el primero en saber sobre las nuevas plantillas.</p>
-                    </div>
-                </div>
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2">
-                        <form class="form-inline">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Tu Email">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <button type="submit" class="btn btn-default btn-block">Suscribirse</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer id="gtco-footer" role="contentinfo" style="background-image: url('@Url.Content("~/Content/images/img_bg_1.jpg")')" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
-            <div class="gtco-container">
-                <div class="row row-pb-md">
-                    <div class="col-md-12 text-center">
-                        <div class="gtco-widget">
-                            <h3>Contactar</h3>
-                            <ul class="gtco-quick-contact">
-                                <li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-                                <li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
-                                <li><a href="#"><i class="icon-chat"></i> Chat en Vivo</a></li>
-                            </ul>
-                        </div>
-                        <div class="gtco-widget">
-                            <h3>Redes Sociales</h3>
-                            <ul class="gtco-social-icons">
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                                <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 text-center copyright">
-                        <p>
-                            <small class="block">&copy; 2016 Free HTML5. Todos los derechos reservados.</small>
-                            <small class="block">Diseñado por <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Imágenes de demostración: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
     </div>
 
     <div class="gototop js-top">
