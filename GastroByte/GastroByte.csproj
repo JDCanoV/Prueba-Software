@@ -316,12 +316,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\index.cshtml" />
-<<<<<<< Updated upstream
-=======
     <Content Include="Views\Usuario\Editar.cshtml" />
     <Content Include="Views\Reservas\Index.cshtml" />
     <Content Include="Views\Reservas\Edit.cshtml" />
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
