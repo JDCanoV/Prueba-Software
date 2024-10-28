@@ -13,6 +13,14 @@ namespace GastroByte
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Ruta para el MenuController
+            routes.MapRoute(
+                name: "Menu",
+                url: "Menu/{action}/{id}",
+                defaults: new { controller = "Menu", action = "Index", id = UrlParameter.Optional }
+            );
+
+            // Ruta por defecto
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
