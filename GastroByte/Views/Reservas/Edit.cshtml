@@ -1,0 +1,45 @@
+﻿@model GastroByte.Dtos.ReservaDto
+
+@{
+    ViewBag.Title = "Editar Reserva";
+}
+
+<h2>Editar Reserva</h2>
+
+@using (Html.BeginForm("Edit", "Reservas", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.id_reservacion)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.documento)
+        @Html.TextBoxFor(m => m.documento, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.documento)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.nombre)
+        @Html.TextBoxFor(m => m.nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.nombre)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.email)
+        @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.fecha)
+        @Html.TextBoxFor(m => m.fecha, new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.fecha)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.hora)
+        @Html.TextBoxFor(m => m.hora, new { @class = "form-control", type = "time" })
+        @Html.ValidationMessageFor(m => m.hora)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a href="@Url.Action("Index", "Reservas")" class="btn btn-secondary">Cancelar</a>
+}
