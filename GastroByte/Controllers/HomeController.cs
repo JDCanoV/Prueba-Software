@@ -11,6 +11,21 @@ namespace GastroByte.Controllers
 {
     public class HomeController : Controller
     {
+         public ActionResult Error(int statusCode = 0)
+    {
+        Response.StatusCode = statusCode;
+
+        if (statusCode == 404)
+        {
+            ViewBag.ErrorMessage = "404 - Dirección incorrecta.";
+        }
+        else
+        {
+            ViewBag.ErrorMessage = "Ha ocurrido un error inesperado.";
+        }
+
+        return View("Error");
+    }
         public ActionResult Index()
         {
             ReservaDto reser = new ReservaDto
