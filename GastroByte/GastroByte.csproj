@@ -317,16 +317,21 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Usuario\Create.cshtml" />
-    <Content Include="Views\Usuario\index.cshtml" />
-    <Content Include="Views\Usuario\Editar.cshtml" />
-    <Content Include="Views\Usuario\Login.cshtml" />
+<Content Include="Views\_ViewStart.cshtml" />
+<Content Include="Views\Shared\Error.cshtml" />
+<Content Include="Views\Shared\_Layout.cshtml" />
+<Content Include="Views\Home\About.cshtml" />
+<Content Include="Views\Home\Contact.cshtml" />
+<Content Include="Views\Home\Index.cshtml" />
+<Content Include="Views\Usuario\Create.cshtml" />
+<Content Include="Views\Usuario\index.cshtml" />
+<Content Include="Views\Usuario\Editar.cshtml" />
+<Content Include="Views\Usuario\Login.cshtml" />
+<Content Include="Views\Reservas\Index.cshtml" />
+<Content Include="Views\Reservas\Edit.cshtml" />
+<Content Include="Views\Menu\Index.cshtml" />
+<Content Include="Views\Menu\Edit.cshtml" />
+<Content Include="Views\Menu\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
