@@ -15,10 +15,13 @@ namespace GastroByte
 
             // Ruta para el MenuController
             routes.MapRoute(
-                name: "Menu",
-                url: "Menu/{action}/{id}",
-                defaults: new { controller = "Menu", action = "Index", id = UrlParameter.Optional }
-            );
+                 name: "Administrador",
+                 url: "Administrador/{action}/{id}",
+                 defaults: new { controller = "Administrador", action = "IndexMenu", id = UrlParameter.Optional }
+
+
+
+            ) ;
 
             // Ruta por defecto
             routes.MapRoute(

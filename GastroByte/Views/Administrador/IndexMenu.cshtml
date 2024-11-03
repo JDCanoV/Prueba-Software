@@ -30,7 +30,7 @@
                 <td>@menu.precio</td>
                 <td>
                     <a href="@Url.Action("EditMenu", "Administrador", new { id = menu.id_platillo })" class="btn btn-success">Editar</a>
-                    @using (Html.BeginForm("Delete", "Administrador", new { id = menu.id_platillo }, FormMethod.Post))
+                    @using (Html.BeginForm("DeleteMenu", "Administrador", new { id = menu.id_platillo }, FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
                         <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este platillo?');">Eliminar</button>
