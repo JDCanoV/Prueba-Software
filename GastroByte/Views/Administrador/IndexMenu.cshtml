@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<GastroByte.Dtos.MenuDto>
+
+@{
+    ViewBag.Title = "Lista de Menus";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml"; //cano y valentina
+}
+
+<h2>Lista de Menus</h2>
+
+<a href="@Url.Action("CreateMenu", "Administrador")" class="btn btn-primary mb-3">Crear Platillo</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Platillo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var menu in Model)
+        {
+            <tr>
+                <td>@menu.id_platillo</td>
+                <td>@menu.nombre_platillo</td>
+                <td>@menu.descripcion</td>
+                <td>@menu.precio</td>
+                <td>
+                    <a href="@Url.Action("EditMenu", "Administrador", new { id = menu.id_platillo })" class="btn btn-success">Editar</a>
+                    @using (Html.BeginForm("Delete", "Administrador", new { id = menu.id_platillo }, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este platillo?');">Eliminar</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
