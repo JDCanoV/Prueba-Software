@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -331,6 +332,11 @@
     <Content Include="Views\Reservas\Edit.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Menu\Create.cshtml" />
+    <Content Include="Views\Administrador\IndexReservas.cshtml" />
+    <Content Include="Views\Administrador\EditReserva.cshtml" />
+    <Content Include="Views\Administrador\CreateMenu.cshtml" />
+    <Content Include="Views\Administrador\IndexMenu.cshtml" />
+    <Content Include="Views\Administrador\EditMenu.cshtml" />
     <Content Include="Views\Shared\_Layout_admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
