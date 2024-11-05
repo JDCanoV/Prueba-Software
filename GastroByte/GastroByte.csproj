@@ -147,6 +147,7 @@
     <Compile Include="Repositories\MenuRepository.cs" />
     <Compile Include="Repositories\UsuarioReposiyoty.cs" />
     <Compile Include="Repositories\ReservaRepository.cs" />
+    <Compile Include="Services\CarritoService.cs" />
     <Compile Include="Services\MenuService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Services\ReservaService.cs" />
@@ -332,6 +333,7 @@
     <Content Include="Views\Administrador\IndexMenu.cshtml" />
     <Content Include="Views\Administrador\EditMenu.cshtml" />
     <Content Include="Views\Shared\_Layout_admin.cshtml" />
+    <Content Include="Views\Administrador\IndexCarrito.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

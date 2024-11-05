@@ -8,11 +8,13 @@ namespace GastroByte.Controllers
     {
         private readonly MenuService _menuService;
         private readonly ReservaService _reservaService;
+        private readonly CarritoService _carritoService;
 
         public AdministradorController()
         {
             _menuService = new MenuService();
             _reservaService = new ReservaService();
+            _carritoService = new CarritoService();
         }
 
         // ================================
@@ -139,6 +141,36 @@ namespace GastroByte.Controllers
 
             ModelState.AddModelError("", "Error al actualizar la reserva.");
             return View(reserva);
+        }
+        // Acción para ver el carrito
+        public ActionResult IndexCarrito()
+        {
+            var productosEnCarrito = _carritoService.ObtenerProductosDelCarrito();
+            return View(productosEnCarrito);
+        }
+
+        // Acción para agregar un producto al carrito mediante AJAX
+        [HttpPost]
+        public JsonResult AgregarAlCarrito(MenuDto producto)
+        {
+            _carritoService.AgregarAlCarrito(producto);
+            return Json(new { success = true, message = "Producto agregado al carrito" });
+        }
+
+
+        [HttpPost]
+        public JsonResult QuitarDelCarrito(int id_platillo)
+        {
+            _carritoService.QuitarDelCarrito(id_platillo);
+            return Json(new { success = true, message = "Producto quitado del carrito" });
+        }
+
+        // Acción para limpiar el carrito mediante AJAX
+        [HttpPost]
+        public JsonResult LimpiarCarrito()
+        {
+            _carritoService.LimpiarCarrito();
+            return Json(new { success = true, message = "Carrito limpiado" });
         }
     }
 }
