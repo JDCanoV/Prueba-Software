@@ -2,11 +2,12 @@
 
 @{
     ViewBag.Title = "Editar Menu";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
 }
 
 <h2>Editar Menu</h2>
 
-@using (Html.BeginForm("Edit", "Menu", FormMethod.Post))
+@using (Html.BeginForm("EditMenu", "Administrador", FormMethod.Post))
 {
     @Html.AntiForgeryToken() <!-- Aquí agregamos el token de verificación -->
 
@@ -31,5 +32,5 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-    <a href="@Url.Action("Index", "Menu")" class="btn btn-secondary">Cancelar</a>
+    <a href="@Url.Action("IndexMenu", "Administrador")" class="btn btn-secondary">Cancelar</a>
 }

@@ -326,8 +326,8 @@
     <Content Include="Views\Usuario\index.cshtml" />
     <Content Include="Views\Usuario\Editar.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Administrador\IndexReservas.cshtml" />
     <Content Include="Views\Administrador\EditReserva.cshtml" />
+    <Content Include="Views\Administrador\IndexReservas.cshtml" />
     <Content Include="Views\Administrador\CreateMenu.cshtml" />
     <Content Include="Views\Administrador\IndexMenu.cshtml" />
     <Content Include="Views\Administrador\EditMenu.cshtml" />

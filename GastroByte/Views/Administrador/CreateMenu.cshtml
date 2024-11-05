@@ -2,11 +2,12 @@
 
 @{
     ViewBag.Title = "Crear Nuevo Platillo";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
 }
 
 <h2>Crear Nuevo Platillo</h2>
 
-@using (Html.BeginForm("Create", "Menu", FormMethod.Post))
+@using (Html.BeginForm("CreateMenu", "Administrador", FormMethod.Post))
 {
     @Html.AntiForgeryToken() <!-- Agregar este token -->
 
