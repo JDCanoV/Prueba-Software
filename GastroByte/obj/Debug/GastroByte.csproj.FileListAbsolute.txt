@@ -352,3 +352,7 @@ C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\obj\Debug\GastroByte.csproj
 C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\obj\Debug\GastroByte.csproj.Up2Date
 C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\obj\Debug\GastroByte.dll
 C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\obj\Debug\GastroByte.pdb
+C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\BouncyCastle.Cryptography.dll
+C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\itextsharp.dll
+C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\BouncyCastle.Cryptography.xml
+C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\itextsharp.xml

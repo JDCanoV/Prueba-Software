@@ -1,6 +1,6 @@
 ﻿@model GastroByte.Dtos.ReservaDto
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml"; //cano y valentina
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
 }
 
 <!DOCTYPE HTML>
@@ -20,7 +20,7 @@
                     <div class="col-md-12 col-md-offset-0 text-left">
                         <div class="row row-mt-15em">
                             <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-                                <span class="intro-text-small">Hecho a mano por <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a></span>
+                                <span class="intro-text-small">SOFTWARE 2024 </span>
                                 <h1 class="cursive-font">¡Todo en buen gusto!</h1>
                             </div>
                             <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
@@ -36,52 +36,37 @@
                                                     @Html.AntiForgeryToken()
 
                                                     <div class="form-group">
-                                                        @Html.Label("N° Personas:", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                        <div class="col-md-10">
-                                                            @Html.EditorFor(model => model.numero_personas, new { htmlAttributes = new { @class = "form-control-1" } })
-                                                            @Html.ValidationMessageFor(model => model.numero_personas, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        @Html.Label("Mesa:", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                        <div class="col-md-10">
-                                                            @Html.EditorFor(model => model.mesa, new { htmlAttributes = new { @class = "form-control-1" } })
-                                                            @Html.ValidationMessageFor(model => model.mesa, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        @Html.Label("Nombre:", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                        <div class="col-md-10">
-                                                            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control-1" } })
-                                                            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
-                                                        </div>
+                                                        @Html.Label("N° Personas:")
+                                                        @Html.EditorFor(model => model.numero_personas, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.numero_personas, "", new { @class = "text-danger" })
                                                     </div>
 
                                                     <div class="form-group">
-                                                        @Html.Label("Gmail:", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                        <div class="col-md-10">
-                                                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control-1" } })
-                                                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                                                        </div>
+                                                        @Html.Label("Mesa:")
+                                                        @Html.EditorFor(model => model.mesa, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.mesa, "", new { @class = "text-danger" })
                                                     </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="date-start">Fecha</label>
-                                                            <input type="text" id="date" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="date-start">Hora</label>
-                                                            <input type="text" id="time" class="form-control">
-                                                        </div>
-                                                    </div>
+
                                                     <div class="form-group">
-                                                        @Html.Label("Hora:", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                        <div class="col-md-10">
-                                                            @Html.EditorFor(model => model.hora, new { htmlAttributes = new { @class = "form-control-1" } })
-                                                            @Html.ValidationMessageFor(model => model.hora, "", new { @class = "text-danger" })
-                                                        </div>
+                                                        @Html.Label("Nombre:")
+                                                        @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        @Html.Label("Gmail:")
+                                                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="date">Fecha</label>
+                                                        <input type="date" id="date" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="time">Hora</label>
+                                                        <input type="time" id="time" class="form-control">
                                                     </div>
 
                                                     <div class="row form-group">
@@ -96,6 +81,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

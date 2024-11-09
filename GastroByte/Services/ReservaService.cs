@@ -26,6 +26,14 @@ namespace GastroByte.Services
                 {
                     responseReservaDto.Response = 1;
                     responseReservaDto.Message = "Creación exitosa";
+                    EmailConfigUtility emailUtility = new EmailConfigUtility();
+                    string destinatario = "patertoxico@gmail.com";
+                    string asunto = "Confirmación de Reserva";
+                    string mensaje = "Estimado cliente, adjuntamos su confirmación de reserva.";
+                    string reservaInfo = "Detalles de la reserva:\nFecha: 25/10/2024\nHora: 18:00\nMesa: 5";
+
+                    emailUtility.EnviarCorreoConPDF(destinatario, asunto, mensaje, reservaInfo);
+
                 }
                 else
                 {
