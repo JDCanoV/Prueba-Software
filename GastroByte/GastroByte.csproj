@@ -334,6 +334,7 @@
     <Content Include="Views\Administrador\EditMenu.cshtml" />
     <Content Include="Views\Shared\_Layout_admin.cshtml" />
     <Content Include="Views\Administrador\IndexCarrito.cshtml" />
+    <Content Include="Views\Administrador\ConfirmarPago.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

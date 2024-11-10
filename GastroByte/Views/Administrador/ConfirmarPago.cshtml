@@ -1,0 +1,80 @@
+﻿@model IEnumerable<GastroByte.Dtos.MenuDto>
+
+@{
+    ViewBag.Title = "Confirmación de Pago";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<div class="container">
+    <h2>Confirmación de Pago</h2>
+    <p>Revisa tu pedido antes de continuar con el pago.</p>
+
+    <!-- Tabla de productos en el carrito -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.nombre_platillo</td>
+                    <td>@item.descripcion</td>
+                    <td>$@item.precio</td>
+                    <td>@item.cantidad</td>
+                    <td>$@(item.precio * item.cantidad)</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-right"><strong>Total:</strong></td>
+                <td><strong>$@ViewBag.Total</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Formulario para los datos del cliente -->
+    <form id="formPedido" method="post" action="@Url.Action("ProcesarPago", "Administrador")">
+        <h3>Datos del Cliente</h3>
+        <div class="form-group">
+            <label>Nombre Completo</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Cédula</label>
+            <input type="text" name="cedula" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input type="text" name="telefono" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Tipo de Pedido</label>
+            <select id="tipoPedido" name="tipoPedido" class="form-control" required>
+                <option value="recoger">Para recoger</option>
+                <option value="domicilio">A domicilio</option>
+            </select>
+        </div>
+        <div class="form-group" id="direccionGroup" style="display:none;">
+            <label>Dirección de Entrega</label>
+            <input type="text" name="direccion" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-lg btn-block">Confirmar y Pagar</button>
+    </form>
+</div>
+
+<script>
+    // Mostrar el campo de dirección si el pedido es a domicilio
+    document.getElementById("tipoPedido").addEventListener("change", function () {
+        var direccionGroup = document.getElementById("direccionGroup");
+        direccionGroup.style.display = this.value === "domicilio" ? "block" : "none";
+    });
+</script>

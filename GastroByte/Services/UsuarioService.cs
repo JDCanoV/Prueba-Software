@@ -20,7 +20,7 @@ namespace GastroByte.Services
                 if (string.IsNullOrEmpty(userModel.contrasena))
                 {
                     responseUserDto.Response = 0;
-                    
+
                     return responseUserDto;
                 }
 
@@ -33,8 +33,8 @@ namespace GastroByte.Services
                 }
                 else
                 {
-                  
-                    
+
+
                     if (userReposiyoty.CreateUser(userModel) != 0)
                     {
                         responseUserDto.Response = 1;
@@ -58,7 +58,7 @@ namespace GastroByte.Services
         }
         public UsuarioDto LoginUser(UsuarioDto loginUser)
         {
-           {
+            {
                 UsuarioDto responseUserDto = new UsuarioDto();
                 UsuarioReposiyoty userReposiyoty = new UsuarioReposiyoty();
 

@@ -1,5 +1,6 @@
 ﻿using GastroByte.Dtos;
 using GastroByte.Services;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace GastroByte.Controllers
@@ -172,5 +173,32 @@ namespace GastroByte.Controllers
             _carritoService.LimpiarCarrito();
             return Json(new { success = true, message = "Carrito limpiado" });
         }
+        public ActionResult ConfirmarPago()
+        {
+            // Verificar si el usuario está autenticado
+            if (Session["UserID"] == null)
+            {
+                // Redirigir al login si no está logueado, con una URL de retorno
+                return RedirectToAction("Login", "Usuario", new { returnUrl = Url.Action("ConfirmarPago", "Administrador") });
+            }
+
+            // Obtener los productos del carrito
+            var carrito = _carritoService.ObtenerProductosDelCarrito();
+            var total = carrito.Sum(item => item.precio * item.cantidad);
+            ViewBag.Total = total;
+
+            return View(carrito);
+        }
+
+
+        [HttpPost]
+        public JsonResult ProcesarPago()
+        {
+            // Aquí agregarías la lógica para procesar el pago real.
+            // Simularemos el pago y luego limpiamos el carrito.
+            _carritoService.LimpiarCarrito();
+            return Json(new { success = true });
+        }
+
     }
 }
