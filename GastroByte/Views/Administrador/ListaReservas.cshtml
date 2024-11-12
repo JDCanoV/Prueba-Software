@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GastroByte.Dtos.ReservaDto>
+
+<h2>Resultados del Reporte de Reservas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Reservación</th>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Correo Electrónico</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reserva in Model)
+        {
+            <tr>
+                <td>@reserva.id_reservacion</td>
+                <td>@reserva.documento</td>
+                <td>@reserva.nombre</td>
+                <td>@reserva.email</td>
+                <td>@DateTime.Parse(reserva.fecha).ToString("dd/MM/yyyy")</td>
+                <td>@reserva.hora</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@using (Html.BeginForm("GenerarPDF", "Administrador", FormMethod.Post))
+{
+    <input type="hidden" name="fechaInicio" value="@Request["fechaInicio"]" />
+    <input type="hidden" name="fechaFin" value="@Request["fechaFin"]" />
+    <button type="submit" class="btn btn-success">Descargar Reporte en PDF</button>
+}
+

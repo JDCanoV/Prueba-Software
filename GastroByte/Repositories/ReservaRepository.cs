@@ -70,6 +70,42 @@ namespace GastroByte.Repositories
             return reservas;
         }
 
+        public IEnumerable<ReservaDto> GetReservasPorFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<ReservaDto> reservas = new List<ReservaDto>();
+            DBContextUtility connection = new DBContextUtility();
+            connection.Connect();
+
+            string SQL = "SELECT * FROM Gastrobyte.dbo.[Reservaciones] WHERE fecha BETWEEN @fechaInicio AND @fechaFin";
+
+            using (SqlCommand command = new SqlCommand(SQL, connection.CONN()))
+            {
+                command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                command.Parameters.AddWithValue("@fechaFin", fechaFin);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        reservas.Add(new ReservaDto
+                        {
+                            id_reservacion = (int)reader["id_reservacion"],
+                            documento = reader["documento"].ToString(),
+                            fecha = reader["fecha"].ToString(),
+                            email = reader["email"].ToString(),
+                            nombre = reader["nombre"].ToString(),
+                            numero_personas = reader["numero_personas"].ToString(),
+                            hora = reader["hora"].ToString(),
+                        });
+                    }
+                }
+            }
+
+            connection.Disconnect();
+            return reservas;
+        }
+
+
         public ReservaDto GetReservaById(int id)
         {
             ReservaDto reserva = null;
@@ -102,6 +138,8 @@ namespace GastroByte.Repositories
             connection.Disconnect();
             return reserva;
         }
+
+
 
         public ReservaDto UpdateReserva(ReservaDto reservaModel)
         {
@@ -139,5 +177,6 @@ namespace GastroByte.Repositories
             connection.Disconnect();
             return updatedReserva; // Devolvemos el objeto actualizado o null si no hubo actualización
         }
+   
     }
 }

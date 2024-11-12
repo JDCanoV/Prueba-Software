@@ -27,12 +27,10 @@ namespace GastroByte.Services
                     responseReservaDto.Response = 1;
                     responseReservaDto.Message = "Creación exitosa";
                     EmailConfigUtility emailUtility = new EmailConfigUtility();
-                    string destinatario = "patertoxico@gmail.com";
+                    string destinatario = reserModel.email;
                     string asunto = "Confirmación de Reserva";
                     string mensaje = "Estimado cliente, adjuntamos su confirmación de reserva.";
-                    string reservaInfo = "Detalles de la reserva:\nFecha: 25/10/2024\nHora: 18:00\nMesa: 5";
-
-                    emailUtility.EnviarCorreoConPDF(destinatario, asunto, mensaje, reservaInfo);
+                    emailUtility.EnviarCorreoConPDF(destinatario, asunto, mensaje, reserModel);
 
                 }
                 else
@@ -56,6 +54,12 @@ namespace GastroByte.Services
         {
             return reserReposiyoty.GetAllReservas(); // Esto ahora debería funcionar correctamente
         }
+
+        public IEnumerable<ReservaDto> ObtenerReporteDeReservas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return reserReposiyoty.GetReservasPorFechas(fechaInicio, fechaFin);
+        }
+
 
         // Método para obtener una reserva por ID
         public ReservaDto GetReservaById(int id)

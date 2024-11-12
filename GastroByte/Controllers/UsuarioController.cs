@@ -132,10 +132,21 @@ namespace GastroByte.Controllers
                     Session["UserID"] = userResponse.id_usuario;
                     Session["UserName"] = userResponse.nombre;
                     Session["UserRole"] = userResponse.id_rol;
-
-                    // Redirige al dashboard o página principal
-                    return RedirectToAction("Index", "Home");
+                    // Redirige a diferentes páginas según el rol del usuario
+                    switch (userResponse.id_rol)
+                    {
+                        case 1:
+                            return RedirectToAction("IndexMenu", "Administrador");
+                        case 2:
+                            return RedirectToAction("Index", "Home");
+                        case 3:
+                            return RedirectToAction("Index", "Home");
+                        default:
+                            // Si el rol no coincide, redirige a una página genérica o de error
+                            return RedirectToAction("Login", "Usuario");
+                    
                 }
+            }
                 else
                 {
                     if (string.IsNullOrEmpty(userResponse.Message))
@@ -151,6 +162,15 @@ namespace GastroByte.Controllers
                 loginUser.Response = 0;
                 return View(loginUser);
             }
+        }
+       
+
+
+        // GET: Usuario/Logout
+        public ActionResult Logout()
+        {
+            Session.Clear();  // Limpia todas las variables de sesión
+            return RedirectToAction("Login", "Usuario");
         }
 
 

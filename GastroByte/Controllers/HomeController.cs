@@ -39,6 +39,7 @@ namespace GastroByte.Controllers
 
                 if (reserResponse.Response == 1)
                 {
+                    reserResponse.Message = "esta melito.";
                     return RedirectToAction("Index");
                 }
                 else
@@ -47,6 +48,7 @@ namespace GastroByte.Controllers
                     if (string.IsNullOrEmpty(reserResponse.Message))
                     {
                         reserResponse.Message = "Error al crear el usuario. Por favor, inténtalo nuevamente.";
+                        
                     }
                     return View(reserResponse);
                 }

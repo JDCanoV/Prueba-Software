@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Reporte de Reservas";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+<div class="login-container">
+    <h4>Reporte de Reservas</h4>
+
+    <form method="post" action="/Administrador/ReporteReservas">
+        <div class="form-group">
+            <label for="fechaInicio">Fecha Inicio:</label>
+            <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" required value="@Request["fechaInicio"]" />
+        </div>
+        <div class="form-group">
+            <label for="fechaFin">Fecha Fin:</label>
+            <input type="date" id="fechaFin" name="fechaFin" class="form-control" required value="@Request["fechaFin"]" />
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <hr />
+</div>
+   
