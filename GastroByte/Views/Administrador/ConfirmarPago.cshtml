@@ -1,10 +1,4 @@
-﻿@model IEnumerable<GastroByte.Dtos.MenuDto>
-
-@{
-    ViewBag.Title = "Confirmación de Pago";
-    Layout = "~/Views/Shared/_Layout_admin.cshtml";
-    var nombre = Session["UserName"] as string;
-}
+﻿@model GastroByte.Dtos.PedidoDto
 
 <div class="container">
     <h2>Confirmación de Pago</h2>
@@ -22,60 +16,95 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @if (ViewBag.Carrito != null && (ViewBag.Carrito as IEnumerable<GastroByte.Dtos.MenuDto>)?.Any() == true)
+            {
+                foreach (var item in ViewBag.Carrito as IEnumerable<GastroByte.Dtos.MenuDto>)
+                {
+                    <tr>
+                        <td>@(item?.nombre_platillo ?? "N/A")</td>
+                        <td>@(item?.descripcion ?? "Sin descripción")</td>
+                        <td>$@(item?.precio ?? 0)</td>
+                        <td>@(item?.cantidad ?? 0)</td>
+                        <td>$@((item?.precio ?? 0) * (item?.cantidad ?? 0))</td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@item.nombre_platillo</td>
-                    <td>@item.descripcion</td>
-                    <td>$@item.precio</td>
-                    <td>@item.cantidad</td>
-                    <td>$@(item.precio * item.cantidad)</td>
+                    <td colspan="5" class="text-center">No hay productos en el carrito.</td>
                 </tr>
             }
         </tbody>
+
         <tfoot>
             <tr>
                 <td colspan="4" class="text-right"><strong>Total:</strong></td>
-                <td><strong>$@ViewBag.Total</strong></td>
+                <td><strong>$@Model.precio_total</strong></td>
             </tr>
         </tfoot>
     </table>
 
     <!-- Formulario para los datos del cliente -->
-    <form id="formPedido" method="post" action="@Url.Action("ProcesarPago", "Administrador")">
+    @using (Html.BeginForm("ProcesarPago", "Administrador", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
         <h3>Datos del Cliente</h3>
+
         <div class="form-group">
-            <label>Nombre Completo</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" value="@nombre" />
+            @Html.LabelFor(m => m.nombre, "Nombre Completo")
+            @Html.TextBoxFor(m => m.nombre, new { @class = "form-control" })
         </div>
+
         <div class="form-group">
-            <label>Cédula</label>
-            <input type="text" name="cedula" class="form-control" required>
+            @Html.LabelFor(m => m.cedula, "Cédula")
+            @Html.TextBoxFor(m => m.cedula, new { @class = "form-control" })
         </div>
+
         <div class="form-group">
-            <label>Teléfono</label>
-            <input type="text" name="telefono" class="form-control" required>
+            @Html.LabelFor(m => m.telefono, "Teléfono")
+            @Html.TextBoxFor(m => m.telefono, new { @class = "form-control" })
         </div>
+
         <div class="form-group">
-            <label>Tipo de Pedido</label>
-            <select id="tipoPedido" name="tipoPedido" class="form-control" required>
-                <option value="recoger">Para recoger</option>
-                <option value="domicilio">A domicilio</option>
-            </select>
+            @Html.LabelFor(m => m.correo, "Correo")
+            @Html.TextBoxFor(m => m.correo, new { @class = "form-control" })
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.tipo_pedido, "Tipo de Pedido")
+            @Html.DropDownListFor(m => m.tipo_pedido, new SelectList(new[] { "recoger", "domicilio" }), new { @class = "form-control", @id = "tipoPedido" })
+        </div>
+
+        <!-- Campo dirección que se muestra solo si es domicilio -->
         <div class="form-group" id="direccionGroup" style="display:none;">
-            <label>Dirección de Entrega</label>
-            <input type="text" name="direccion" class="form-control">
+            @Html.LabelFor(m => m.direccion, "Dirección de Entrega")
+            @Html.TextBoxFor(m => m.direccion, new { @class = "form-control" })
         </div>
+
+        <!-- Campo oculto para dirección en caso de "recoger" -->
+        @Html.HiddenFor(m => m.direccion)
+        <!-- Campo oculto para enviar el precio total -->
+        @Html.HiddenFor(m => m.precio_total)
 
         <button type="submit" class="btn btn-success btn-lg btn-block">Confirmar y Pagar</button>
-    </form>
-</div>
+    }
 
-<script>
-    // Mostrar el campo de dirección si el pedido es a domicilio
-    document.getElementById("tipoPedido").addEventListener("change", function () {
-        var direccionGroup = document.getElementById("direccionGroup");
-        direccionGroup.style.display = this.value === "domicilio" ? "block" : "none";
-    });
-</script>
+    <script>
+        document.getElementById("tipoPedido").addEventListener("change", function () {
+            var direccionGroup = document.getElementById("direccionGroup");
+            var direccionHidden = document.getElementById("Direccion");
+
+            if (this.value === "domicilio") {
+                direccionGroup.style.display = "block";
+                direccionHidden.value = ""; // Asegúrate de que el campo oculto está vacío
+            } else {
+                direccionGroup.style.display = "none";
+                direccionHidden.value = ""; // Asegúrate de que el campo oculto no tiene valor
+            }
+        });
+
+        // Inicializar al cargar la página
+        document.getElementById("tipoPedido").dispatchEvent(new Event("change"));
+    </script>

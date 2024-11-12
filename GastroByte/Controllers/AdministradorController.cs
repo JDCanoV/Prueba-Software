@@ -1,5 +1,8 @@
 ﻿using GastroByte.Dtos;
 using GastroByte.Services;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -11,6 +14,7 @@ namespace GastroByte.Controllers
         private readonly MenuService _menuService;
         private readonly ReservaService _reservaService;
         private readonly CarritoService _carritoService;
+        private readonly PedidoService _pedidoService;
 
         // Constructor donde se inicializan los servicios utilizados
         public AdministradorController()
@@ -18,6 +22,7 @@ namespace GastroByte.Controllers
             _menuService = new MenuService();
             _reservaService = new ReservaService();
             _carritoService = new CarritoService();
+            _pedidoService = new PedidoService();
         }
 
         // ================================
@@ -180,31 +185,91 @@ namespace GastroByte.Controllers
         }
 
         // Acción para confirmar el pago
+        // Acción para confirmar el pago
         public ActionResult ConfirmarPago()
         {
-            // Verifica si el usuario está autenticado
             if (Session["UserID"] == null)
             {
-                // Redirige al login si no está logueado, con una URL de retorno
                 return RedirectToAction("Login", "Usuario", new { returnUrl = Url.Action("ConfirmarPago", "Administrador") });
             }
 
-            // Obtiene los productos del carrito y calcula el total
             var carrito = _carritoService.ObtenerProductosDelCarrito();
-            var total = carrito.Sum(item => item.precio * item.cantidad); // Suma el precio de los productos multiplicados por la cantidad
-            ViewBag.Total = total; // Asigna el total al ViewBag para mostrarlo en la vista
+            if (carrito == null || !carrito.Any())
+            {
+                TempData["ErrorMessage"] = "El carrito está vacío.";
+                return RedirectToAction("IndexCarrito");
+            }
 
-            return View(carrito); // Devuelve la vista de confirmación de pago con los productos y el total
+            ViewBag.Carrito = carrito;
+            var total = carrito.Sum(item => item.precio * item.cantidad);
+
+            // Asegúrate de que el total es el esperado
+            Console.WriteLine("Total calculado en ConfirmarPago: " + total);
+
+            var pedido = new PedidoDto
+            {
+                nombre = Session["UserName"] as string,
+                cedula = Session["UserDocumento"] as string,
+                telefono = Session["UserTelefono"] as string,
+                correo = Session["UserCorreo"] as string,
+                precio_total = total.ToString()  // Convierte a string antes de asignar
+            };
+            return View(pedido);
         }
 
-        // Acción para procesar el pago
         [HttpPost]
-        public JsonResult ProcesarPago()
+        public ActionResult ProcesarPago(PedidoDto model)
         {
-            // Aquí agregarías la lógica para procesar el pago real
-            // Simulamos el pago y luego limpiamos el carrito
-            _carritoService.LimpiarCarrito(); // Limpia el carrito después de procesar el pago
-            return Json(new { success = true }); // Devuelve una respuesta de éxito en formato JSON
+            // Imprimir el valor de precio_total recibido
+            Console.WriteLine("Precio Total Recibido en ProcesarPago: " + model.precio_total);
+
+            if (model.tipo_pedido == "domicilio" && string.IsNullOrEmpty(model.direccion))
+            {
+                ModelState.AddModelError("direccion", "La dirección es obligatoria para pedidos a domicilio.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View("ConfirmarPago", model);
+            }
+
+            model.precio_total = CalcularPrecioTotal().ToString();
+
+            try
+            {
+                var resultado = _pedidoService.CreatePedido(model);
+
+                if (resultado != null)
+                {
+                    _carritoService.LimpiarCarrito();
+                    TempData["SuccessMessage"] = "El pago se procesó correctamente y el carrito fue limpiado.";
+                    return RedirectToAction("IndexCarrito", "Administrador");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Hubo un error al guardar el pedido en la base de datos.");
+                    return View("ConfirmarPago", model);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Hubo un problema al procesar el pago: " + ex.Message);
+                return View("ConfirmarPago", model);
+            }
+        }
+
+        private decimal CalcularPrecioTotal()
+        {
+            decimal total = 0;
+            if (ViewBag.Carrito != null)
+            {
+                foreach (var item in ViewBag.Carrito as IEnumerable<MenuDto>)
+                {
+                    total += item.precio * item.cantidad;
+                }
+            }
+            Console.WriteLine("Total calculado en CalcularPrecioTotal: " + total);
+            return total;
         }
     }
 }

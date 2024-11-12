@@ -77,10 +77,13 @@ namespace GastroByte.Services
                     if (EncryptUtility.VerifyPassword(loginUser.contrasena, storedUser.contrasena))
                     {
                         // Asigna los valores necesarios al DTO de respuesta
-                        responseUserDto.Response = 1;  // Login exitoso
-                        responseUserDto.id_usuario = storedUser.id_usuario; // Asegúrate de que se está asignando el ID
-                        responseUserDto.nombre = storedUser.nombre; // Asegúrate de que se está asignando el nombre
-                        responseUserDto.id_rol = storedUser.id_rol; // Asegúrate de que se está asignando el rol
+                        responseUserDto.Response = 1; // Login exitoso
+                        responseUserDto.id_usuario = storedUser.id_usuario; // Asigna el ID
+                        responseUserDto.nombre = storedUser.nombre; // Asigna el nombre
+                        responseUserDto.id_rol = storedUser.id_rol; // Asigna el rol
+                        responseUserDto.numero_documento = storedUser.numero_documento; 
+                        responseUserDto.telefono = storedUser.telefono; 
+                        responseUserDto.correo_electronico = storedUser.correo_electronico; 
                     }
                     else
                     {

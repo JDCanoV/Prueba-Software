@@ -138,17 +138,20 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Dtos\MenuDto.cs" />
+    <Compile Include="Dtos\PedidoDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="Dtos\ReservaDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PedidoRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
     <Compile Include="Repositories\UsuarioReposiyoty.cs" />
     <Compile Include="Repositories\ReservaRepository.cs" />
     <Compile Include="Services\CarritoService.cs" />
     <Compile Include="Services\MenuService.cs" />
+    <Compile Include="Services\PedidoService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Services\ReservaService.cs" />
     <Compile Include="Utilities\DBContextUtility.cs" />

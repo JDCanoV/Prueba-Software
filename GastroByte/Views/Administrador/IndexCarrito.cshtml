@@ -6,6 +6,20 @@
 
 <h2>Carrito de Compras</h2>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
 @if (Model.Any())
 {
     <table class="table">
@@ -27,7 +41,7 @@
                     <td>@producto.nombre_platillo</td>
                     <td>@producto.descripcion</td>
                     <td>@producto.precio</td>
-                    <td>@producto.cantidad</td> <!-- Mostrar cantidad -->
+                    <td>@producto.cantidad</td>
                     <td>
                         <button class="btn btn-danger" onclick="quitarDelCarrito(@producto.id_platillo)">Quitar</button>
                     </td>
@@ -35,8 +49,8 @@
             }
         </tbody>
     </table>
-
 }
+
 <div class="total-container">
     <h4>Total: $@Model.Sum(item => item.precio * item.cantidad)</h4>
     <a href="@Url.Action("ConfirmarPago", "Administrador")"
@@ -55,7 +69,6 @@
         return true;
     }
 </script>
-
 
 <script>
     function quitarDelCarrito(id) {
@@ -78,4 +91,3 @@
         });
     }
 </script>
-

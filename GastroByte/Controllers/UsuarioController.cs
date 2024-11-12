@@ -43,13 +43,15 @@ namespace GastroByte.Controllers
                 // Si la respuesta indica que el login fue exitoso (Response == 1)
                 if (userResponse.Response == 1)
                 {
-                    // Establece las variables de sesión con los datos del usuario
                     Session["UserID"] = userResponse.id_usuario;
                     Session["UserName"] = userResponse.nombre;
                     Session["UserRole"] = userResponse.id_rol;
+                    Session["UserDocumento"] = userResponse.numero_documento;
+                    Session["UserTelefono"] = userResponse.telefono;
+                    Session["UserCorreo"] = userResponse.correo_electronico;
 
-                    // Redirige al returnUrl si está definido, o al home en caso contrario
-                    if (!string.IsNullOrEmpty(returnUrl))
+                // Redirige al returnUrl si está definido, o al home en caso contrario
+                if (!string.IsNullOrEmpty(returnUrl))
                         return Redirect(returnUrl); // Si hay una URL de retorno, redirige a esa
 
                     // Si no hay returnUrl, redirige al home
@@ -94,7 +96,7 @@ namespace GastroByte.Controllers
             // Verifica si el modelo de usuario está vacío, y si es así, asigna un mensaje de error
             if (newUser == null)
             {
-                newUser = new UsuarioDto { Message = "El modelo de usuario no se envió correctamente." };
+                newUser = new UsuarioDto { Message = "El wo de usuario no se envió correctamente." };
                 return View(newUser); // Devuelve la vista con el mensaje de error
             }
 
