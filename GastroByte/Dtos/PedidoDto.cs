@@ -14,7 +14,7 @@ namespace GastroByte.Dtos
         public string tipo_pedido { get; set; } = string.Empty;
         public DateTime Fecha { get; set; }
         public DateTime Hora { get; set; }
-        public string precio_total { get; set; } = string.Empty;
+        public decimal precio_total { get; set; }
         public string nombre { get; set; } = string.Empty;
         public string cedula { get; set; } = string.Empty;
         public string telefono { get; set; } = string.Empty;

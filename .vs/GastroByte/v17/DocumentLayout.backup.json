@@ -3,48 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\views\\administrador\\indexmenu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\administrador\\indexmenu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\views\\administrador\\confirmarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\administrador\\confirmarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\views\\administrador\\indexcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\administrador\\indexcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\dtos\\pedidodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\dtos\\pedidodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\dtos\\pedidodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\dtos\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\views\\administrador\\indexcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\administrador\\indexcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\views\\administrador\\confirmarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\administrador\\confirmarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\dtos\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\dtos\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\services\\menuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\services\\menuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\services\\menuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\repositories\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\repositories\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\repositories\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,63 +54,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IndexCarrito.cshtml",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Administrador\\IndexCarrito.cshtml",
               "RelativeDocumentMoniker": "GastroByte\\Views\\Administrador\\IndexCarrito.cshtml",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Administrador\\IndexCarrito.cshtml",
               "RelativeToolTip": "GastroByte\\Views\\Administrador\\IndexCarrito.cshtml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAowF0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-11T23:07:18.258Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "IndexMenu.cshtml",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Administrador\\IndexMenu.cshtml",
               "RelativeDocumentMoniker": "GastroByte\\Views\\Administrador\\IndexMenu.cshtml",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Administrador\\IndexMenu.cshtml",
               "RelativeToolTip": "GastroByte\\Views\\Administrador\\IndexMenu.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAE4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-11T23:02:51.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AdministradorController.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Controllers\\AdministradorController.cs",
               "RelativeDocumentMoniker": "GastroByte\\Controllers\\AdministradorController.cs",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Controllers\\AdministradorController.cs",
               "RelativeToolTip": "GastroByte\\Controllers\\AdministradorController.cs",
-              "ViewState": "AgIAAP0AAAAAAAAAAAAQwA4BAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAQwP0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T23:00:06.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MenuDto.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Dtos\\MenuDto.cs",
               "RelativeDocumentMoniker": "GastroByte\\Dtos\\MenuDto.cs",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Dtos\\MenuDto.cs",
               "RelativeToolTip": "GastroByte\\Dtos\\MenuDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T22:58:13.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MenuService.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\MenuService.cs",
               "RelativeDocumentMoniker": "GastroByte\\Services\\MenuService.cs",
@@ -118,25 +118,24 @@
               "RelativeToolTip": "GastroByte\\Services\\MenuService.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAgwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T22:56:03.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T22:56:03.303Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "PedidoRepository.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Repositories\\PedidoRepository.cs",
               "RelativeDocumentMoniker": "GastroByte\\Repositories\\PedidoRepository.cs",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Repositories\\PedidoRepository.cs",
               "RelativeToolTip": "GastroByte\\Repositories\\PedidoRepository.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAYwKEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T22:43:38.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "MenuRepository.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Repositories\\MenuRepository.cs",
               "RelativeDocumentMoniker": "GastroByte\\Repositories\\MenuRepository.cs",
@@ -144,57 +143,56 @@
               "RelativeToolTip": "GastroByte\\Repositories\\MenuRepository.cs",
               "ViewState": "AgIAAH0AAAAAAAAAAAAswJ4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T22:43:36.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T22:43:36.326Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "PedidoDto.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Dtos\\PedidoDto.cs",
               "RelativeDocumentMoniker": "GastroByte\\Dtos\\PedidoDto.cs",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Dtos\\PedidoDto.cs",
               "RelativeToolTip": "GastroByte\\Dtos\\PedidoDto.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAowBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwBQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T22:43:30.752Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "PedidoService.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\PedidoService.cs",
               "RelativeDocumentMoniker": "GastroByte\\Services\\PedidoService.cs",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\PedidoService.cs",
               "RelativeToolTip": "GastroByte\\Services\\PedidoService.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAiwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T22:43:26.759Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "CarritoService.cs",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\CarritoService.cs",
               "RelativeDocumentMoniker": "GastroByte\\Services\\CarritoService.cs",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Services\\CarritoService.cs",
               "RelativeToolTip": "GastroByte\\Services\\CarritoService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAYwDUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAcwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T22:43:25.494Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ConfirmarPago.cshtml",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Administrador\\ConfirmarPago.cshtml",
               "RelativeDocumentMoniker": "GastroByte\\Views\\Administrador\\ConfirmarPago.cshtml",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Administrador\\ConfirmarPago.cshtml",
               "RelativeToolTip": "GastroByte\\Views\\Administrador\\ConfirmarPago.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-11T22:39:17.344Z",
               "EditorCaption": ""
