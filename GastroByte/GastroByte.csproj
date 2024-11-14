@@ -186,6 +186,13 @@
     <Content Include="Content\css\owl.theme.default.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\themify-icons.css" />
+    <Content Include="Content\images\img_12.jpg" />
+    <Content Include="Content\images\img_13.jpg" />
+    <Content Include="Content\images\img_14.jpg" />
+    <Content Include="Content\images\img_15.jpg" />
+    <Content Include="Content\images\img_16.jpg" />
+    <Content Include="Content\images\img_17.jpg" />
+    <Content Include="Content\images\img_18.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

@@ -1981,20 +1981,20 @@ form label {
     font-size: 26px;
   }
 }
-.container {
+.container-1 {
     max-width: 700px;
     margin: auto;
 }
 
-.table {
+.table-1 {
     margin-bottom: 1rem;
 }
 
-.payment-options {
+.payment-options-1 {
     margin-top: 20px;
 }
 
-.btn-lg {
+.btn-lg-1 {
     font-size: 1.2rem;
     padding: 0.6rem 1.5rem;
 }

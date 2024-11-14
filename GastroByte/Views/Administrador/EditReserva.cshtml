@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm("EditReserva", "Administrador", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.id_reservacion)
 
     <div class="form-group">
