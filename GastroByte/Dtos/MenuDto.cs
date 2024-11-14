@@ -13,9 +13,10 @@ namespace GastroByte.Dtos
         public int id_categoria { get; set; }
         public string nombre_platillo { get; set; } = string.Empty;
         public string descripcion { get; set; } = string.Empty;
-        public string precio { get; set; } = string.Empty;
+        public int precio { get; set; }
+        public int cantidad { get; set; }
         public int Response { get; set; }
         public string Message { get; set; } = string.Empty;
-        public int id_estado{ get; set; }
+        public int id_estado { get; set; }
     }
 }

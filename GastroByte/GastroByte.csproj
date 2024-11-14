@@ -146,16 +146,20 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Dtos\MenuDto.cs" />
+    <Compile Include="Dtos\PedidoDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="Dtos\ReservaDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PedidoRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
     <Compile Include="Repositories\UsuarioReposiyoty.cs" />
     <Compile Include="Repositories\ReservaRepository.cs" />
+    <Compile Include="Services\CarritoService.cs" />
     <Compile Include="Services\MenuService.cs" />
+    <Compile Include="Services\PedidoService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Services\ReservaService.cs" />
     <Compile Include="Utilities\DBContextUtility.cs" />
@@ -191,6 +195,13 @@
     <Content Include="Content\css\owl.theme.default.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\themify-icons.css" />
+    <Content Include="Content\images\img_12.jpg" />
+    <Content Include="Content\images\img_13.jpg" />
+    <Content Include="Content\images\img_14.jpg" />
+    <Content Include="Content\images\img_15.jpg" />
+    <Content Include="Content\images\img_16.jpg" />
+    <Content Include="Content\images\img_17.jpg" />
+    <Content Include="Content\images\img_18.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -351,6 +362,8 @@
     <Content Include="Views\Administrador\CreateUsuario.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_cliente.cshtml" />
+    <Content Include="Views\Administrador\IndexCarrito.cshtml" />
+    <Content Include="Views\Administrador\ConfirmarPago.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

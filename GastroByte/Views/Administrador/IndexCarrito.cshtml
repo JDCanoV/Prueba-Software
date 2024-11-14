@@ -1,0 +1,93 @@
+﻿@model IEnumerable<GastroByte.Dtos.MenuDto>
+@{
+    ViewBag.Title = "Carrito de Compras";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2>Carrito de Compras</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Platillo</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.id_platillo</td>
+                    <td>@producto.nombre_platillo</td>
+                    <td>@producto.descripcion</td>
+                    <td>@producto.precio</td>
+                    <td>@producto.cantidad</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="quitarDelCarrito(@producto.id_platillo)">Quitar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="total-container">
+    <h4>Total: $@Model.Sum(item => item.precio * item.cantidad)</h4>
+    <a href="@Url.Action("ConfirmarPago", "Administrador")"
+       class="btn btn-primary btn-lg btn-block"
+       onclick="return verificarUsuarioLogueado()">Pagar</a>
+</div>
+
+<script>
+    function verificarUsuarioLogueado() {
+        var usuarioLogueado = '@Session["UserID"]' !== ''; // Verifica si la sesión existe
+        if (!usuarioLogueado) {
+            alert("Debes iniciar sesión para realizar el pago.");
+            window.location.href = '@Url.Action("Login", "Usuario", new { returnUrl = Url.Action("ConfirmarPago", "Administrador") })';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<script>
+    function quitarDelCarrito(id) {
+        $.ajax({
+            url: '@Url.Action("QuitarDelCarrito", "Administrador")',
+            type: 'POST',
+            data: JSON.stringify({ id_platillo: id }),
+            contentType: 'application/json; charset=utf-8',
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message); // Mensaje de confirmación
+                    window.location.reload(); // Recargar la página para actualizar el carrito
+                } else {
+                    alert("Error al quitar el producto del carrito.");
+                }
+            },
+            error: function() {
+                alert("Error en la solicitud para quitar el producto del carrito.");
+            }
+        });
+    }
+</script>

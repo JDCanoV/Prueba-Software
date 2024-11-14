@@ -55,7 +55,7 @@ namespace GastroByte.Repositories
                             id_platillo = (int)reader["id_platillo"],
                             nombre_platillo = reader["nombre_platillo"].ToString(),
                             descripcion = reader["descripcion"].ToString(),
-                            precio = reader["precio"].ToString()
+                            precio = (int)reader["precio"]
                         });
                     }
                 }
@@ -85,7 +85,7 @@ namespace GastroByte.Repositories
                             id_platillo = (int)reader["id_platillo"],
                             nombre_platillo = reader["nombre_platillo"].ToString(),
                             descripcion = reader["descripcion"].ToString(),
-                            precio = reader["precio"].ToString()
+                            precio = (int)reader["precio"]
                         };
                     }
                 }

@@ -1,134 +1,48 @@
 ﻿using GastroByte.Dtos;
 using GastroByte.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace GastroByte.Controllers
 {
     public class UsuarioController : Controller
     {
-        // GET: Usuario
+        // Vista principal de Usuario
+        // Esta acción devuelve la vista principal del usuario
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Login()
+
+        // Vista de Login (GET)
+        // Esta acción se encarga de mostrar el formulario de inicio de sesión
+        public ActionResult Login(string returnUrl = null)
         {
-            return View();
-        }
-        public ActionResult Editar()
-        {
-            return View();
-        }
-       
-        // GET: Usuario/Details/5
-        public ActionResult Details(int id)
-        {
+            ViewBag.ReturnUrl = returnUrl; // Almacena la URL de retorno para redirigir después del login
             return View();
         }
 
-        // GET: Usuario/Create
-        public ActionResult Create()
-        {
-            UsuarioDto user = new UsuarioDto
-            {
-                Response = 0, // Inicializa Response en 0 o algún valor por defecto
-                Message = string.Empty // Inicializa Message como una cadena vacía
-            };
-            return View(user);
-        }
-
-        // POST: Usuario/Create
+        // Procesamiento del Login (POST)
+        // Esta acción maneja la lógica cuando el usuario envía el formulario de login
         [HttpPost]
-        public ActionResult Create(UsuarioDto newUser)
+        public ActionResult Login(UsuarioDto loginUser, string returnUrl = null)
         {
-            if (newUser == null)
-            {
-                newUser = new UsuarioDto();
-                newUser.Message = "El modelo de usuario no se envió correctamente.";
-                return View(newUser);
-            }
-
-            try
-            {
-                UsuarioService userService = new UsuarioService();
-                UsuarioDto userResponse = userService.CreateUser(newUser);
-
-                if (userResponse.Response == 1)
-                {
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    // Asegúrate de que `Message` tenga un valor
-                    if (string.IsNullOrEmpty(userResponse.Message))
-                    {
-                        userResponse.Message = "Error al crear el usuario. Por favor, inténtalo nuevamente.";
-                    }
-                    return View(userResponse);
-                }
-            }
-            catch (Exception ex)
-            {
-                // En caso de excepción, devuelves el modelo con un mensaje de error
-                newUser.Message = "Ocurrió un error inesperado: " + ex.Message; // Muestra el mensaje de la excepción
-                newUser.Response = 0;
-                return View(newUser);
-            }
-        }
-
-
-        // GET: Usuario/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Usuario/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Usuario/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Usuario/Login
-        [HttpPost]
-        public ActionResult Login(UsuarioDto loginUser)
-        // POST: Usuario/Login
-        {
+            // Verifica si el modelo de usuario está vacío, y si es así, asigna un mensaje de error
             if (loginUser == null)
             {
-                loginUser = new UsuarioDto();
-                loginUser.Message = "El modelo de usuario no se envió correctamente.";
-                return View(loginUser);
+                loginUser = new UsuarioDto { Message = "El modelo de usuario no se envió correctamente." };
+                return View(loginUser); // Devuelve la vista con el mensaje de error
             }
 
             try
             {
-                UsuarioService userService = new UsuarioService();
-                UsuarioDto userResponse = userService.LoginUser(loginUser);
+                // Llama al servicio de usuario para autenticar al usuario
+                var userService = new UsuarioService();
+                var userResponse = userService.LoginUser(loginUser);
 
+                // Si la respuesta indica que el login fue exitoso (Response == 1)
                 if (userResponse.Response == 1)
                 {
-                    // Establece la sesión con los datos del usuario
                     Session["UserID"] = userResponse.id_usuario;
                     Session["UserName"] = userResponse.nombre;
                     Session["UserRole"] = userResponse.id_rol;
@@ -145,22 +59,30 @@ namespace GastroByte.Controllers
                             // Si el rol no coincide, redirige a una página genérica o de error
                             return RedirectToAction("Login", "Usuario");
                     
+                    Session["UserDocumento"] = userResponse.numero_documento;
+                    Session["UserTelefono"] = userResponse.telefono;
+                    Session["UserCorreo"] = userResponse.correo_electronico;
+
+                // Redirige al returnUrl si está definido, o al home en caso contrario
+                if (!string.IsNullOrEmpty(returnUrl))
+                        return Redirect(returnUrl); // Si hay una URL de retorno, redirige a esa
+
+                    // Si no hay returnUrl, redirige al home
+                    return RedirectToAction("Index", "Home");
                 }
             }
                 else
                 {
-                    if (string.IsNullOrEmpty(userResponse.Message))
-                    {
-                        userResponse.Message = "Credenciales incorrectas. Inténtalo nuevamente.";
-                    }
-                    return View(userResponse);
+                    // Si las credenciales son incorrectas, muestra un mensaje de error
+                    loginUser.Message = "Credenciales incorrectas. Inténtalo nuevamente.";
+                    return View(loginUser); // Devuelve la vista con el mensaje de error
                 }
             }
             catch (Exception ex)
             {
+                // Si ocurre una excepción, muestra el mensaje de error correspondiente
                 loginUser.Message = "Ocurrió un error inesperado: " + ex.Message;
-                loginUser.Response = 0;
-                return View(loginUser);
+                return View(loginUser); // Devuelve la vista con el mensaje de error
             }
         }
        
@@ -173,20 +95,60 @@ namespace GastroByte.Controllers
             return RedirectToAction("Login", "Usuario");
         }
 
-
-        // POST: Usuario/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        // Método para cerrar sesión
+        // Esta acción limpia la sesión del usuario y redirige a la página de login
+        public ActionResult Logout()
         {
+            Session.Clear(); // Limpia toda la sesión del usuario
+            return RedirectToAction("Login", "Usuario"); // Redirige a la página de login
+        }
+
+        // Vista de creación de usuario (GET)
+        // Muestra el formulario para crear un nuevo usuario
+        public ActionResult Create()
+        {
+            // Inicializa un objeto UsuarioDto vacío para pasarlo a la vista
+            return View(new UsuarioDto { Response = 0, Message = string.Empty });
+        }
+
+        // Procesamiento de creación de usuario (POST)
+        // Esta acción maneja la lógica cuando el formulario de creación de usuario es enviado
+        [HttpPost]
+        public ActionResult Create(UsuarioDto newUser)
+        {
+            // Verifica si el modelo de usuario está vacío, y si es así, asigna un mensaje de error
+            if (newUser == null)
+            {
+                newUser = new UsuarioDto { Message = "El wo de usuario no se envió correctamente." };
+                return View(newUser); // Devuelve la vista con el mensaje de error
+            }
+
             try
             {
-                // TODO: Add delete logic here
+                // Llama al servicio de usuario para crear el nuevo usuario
+                var userService = new UsuarioService();
+                var userResponse = userService.CreateUser(newUser);
 
-                return RedirectToAction("Index");
+                // Si la respuesta indica que la creación fue exitosa (Response == 1)
+                if (userResponse.Response == 1)
+                {
+                    return RedirectToAction("Index"); // Redirige al index de usuario
+                }
+                else
+                {
+                    // Si ocurrió un error en la creación, muestra el mensaje de error
+                    if (userResponse.Message == null)
+                    {
+                        userResponse.Message = "Error al crear el usuario. Por favor, inténtalo nuevamente.";
+                    }
+                    return View(userResponse); // Devuelve la vista con el mensaje de error
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                // Si ocurre una excepción, muestra el mensaje de error correspondiente
+                newUser.Message = "Ocurrió un error inesperado: " + ex.Message;
+                return View(newUser); // Devuelve la vista con el mensaje de error
             }
         }
     }
