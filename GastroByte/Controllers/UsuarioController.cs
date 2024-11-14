@@ -96,12 +96,7 @@ namespace GastroByte.Controllers
             return RedirectToAction("Login", "Usuario");
         }
 
-        // Método para cerrar sesión
-        // Esta acción limpia la sesión del usuario y redirige a la página de login
-        
-
-        // Vista de creación de usuario (GET)
-        // Muestra el formulario para crear un nuevo usuario
+       
         public ActionResult Create()
         {
             // Inicializa un objeto UsuarioDto vacío para pasarlo a la vista
