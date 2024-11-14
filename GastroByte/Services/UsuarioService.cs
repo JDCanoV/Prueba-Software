@@ -10,7 +10,7 @@ namespace GastroByte.Services
 {
     public class UsuarioService
     {
-        
+
 
         public UsuarioDto CreateUser(UsuarioDto userModel)
         {
@@ -66,7 +66,7 @@ namespace GastroByte.Services
         }
         public UsuarioDto LoginUser(UsuarioDto loginUser)
         {
-            {
+            
                 UsuarioDto responseUserDto = new UsuarioDto();
                 UsuarioReposiyoty userReposiyoty = new UsuarioReposiyoty();
 
@@ -118,4 +118,3 @@ namespace GastroByte.Services
 
     }
 
-}
