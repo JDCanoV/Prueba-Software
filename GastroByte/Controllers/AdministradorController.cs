@@ -1,5 +1,6 @@
 using GastroByte.Dtos;
 using GastroByte.Services;
+using GastroByte.Utilities;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -11,6 +12,7 @@ using System.Web.Mvc;
 
 namespace GastroByte.Controllers
 {
+    [AuthorizeRole(1)]
     public class AdministradorController : Controller
     {
         // Servicios necesarios para el controlador
@@ -46,8 +48,9 @@ namespace GastroByte.Controllers
 
         public ActionResult IndexUsuario()
         {
-            
-            return View();
+            var user = _usuarioService.GetAllUsuario();
+            return View(user);
+           
         }
 
 

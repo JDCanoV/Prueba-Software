@@ -1,5 +1,6 @@
 ﻿using GastroByte.Dtos;
 using GastroByte.Services;
+using GastroByte.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace GastroByte.Controllers
 {
+    [AuthorizeRole(2)]
     public class AsistenteController : Controller
     {
         private readonly MenuService _menuService;

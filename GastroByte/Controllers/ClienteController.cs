@@ -1,5 +1,6 @@
 ﻿using GastroByte.Dtos;
 using GastroByte.Services;
+using GastroByte.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace GastroByte.Controllers
 {
+    [AuthorizeRole(3)]
     public class ClienteController : Controller
     {    // Servicios necesarios para el controlador
         private readonly MenuService _menuService;
@@ -23,7 +25,7 @@ namespace GastroByte.Controllers
         _carritoService = new CarritoService();
         _pedidoService = new PedidoService();
     }
-    
+
         // GET: Cliente
         public ActionResult Index()
         {
@@ -38,8 +40,11 @@ namespace GastroByte.Controllers
                 return RedirectToAction("Login", "Usuario");
             }
 
+            // Preserva TempData para que esté disponible en la vista
+            TempData.Keep();
             return View();
         }
+
         public ActionResult IndexMenu()
         {
             var menu = _menuService.GetAllMenus();
@@ -182,7 +187,7 @@ namespace GastroByte.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                
 
                 return RedirectToAction("Index");
             }
@@ -191,6 +196,61 @@ namespace GastroByte.Controllers
                 return View();
             }
         }
+
+        public ActionResult CreateReserva()
+        {
+            // Crea y llena una única instancia de ReservaDto con los datos de la sesión
+            var reserva = new ReservaDto
+            {
+                nombre = Session["UserName"] as string,
+                documento = Session["UserDocumento"] as string,
+                email = Session["UserCorreo"] as string,
+                Response = 0,
+                Message = string.Empty
+            };
+
+            return View(reserva);
+        }
+
+
+        // POST: Usuario/Create
+        [HttpPost]
+        public ActionResult CreateReserva(ReservaDto newRes)
+        {
+            if (newRes == null)
+            {
+                newRes = new ReservaDto();
+                newRes.Message = "El modelo de usuario no se envió correctamente.";
+                return View(newRes);
+            }
+
+            try
+            {
+                ReservaService reserService = new ReservaService();
+                ReservaDto reserResponse = reserService.CreateReser(newRes);
+
+                if (reserResponse.Response == 1)
+                {
+                    TempData["SuccessMessage"] = "Su reserva ha sido creada exitosamente.";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(reserResponse.Message))
+                    {
+                        reserResponse.Message = "Error al crear la reserva. Por favor, inténtelo nuevamente.";
+                    }
+                    return View(reserResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                newRes.Message = "Ocurrió un error inesperado: " + ex.Message;
+                newRes.Response = 0;
+                return View(newRes);
+            }
+        }
+
 
         // GET: Cliente/Edit/5
         public ActionResult Edit(int id)

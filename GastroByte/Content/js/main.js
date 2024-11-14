@@ -24,6 +24,25 @@
 	};
 
 
+	document.addEventListener("DOMContentLoaded", function () {
+		var closeBtn = document.getElementById("closeAlert");
+		var alertBox = document.getElementById("customAlert");
+
+		// Cerrar la alerta al hacer clic en el botón de cierre
+		if (closeBtn && alertBox) {
+			closeBtn.addEventListener("click", function () {
+				alertBox.style.display = "none";
+			});
+
+			// Cerrar la alerta automáticamente después de 5 segundos
+			setTimeout(function () {
+				alertBox.style.display = "none";
+			}, 5000);
+		}
+	});
+
+
+
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {

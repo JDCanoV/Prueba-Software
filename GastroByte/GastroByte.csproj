@@ -365,6 +365,7 @@
     <Content Include="Views\Cliente\IndexCarrito.cshtml" />
     <Content Include="Views\Cliente\ConfirmarPago.cshtml" />
     <Content Include="Views\Cliente\IndexMenu.cshtml" />
+    <Content Include="Views\Cliente\CreateReserva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

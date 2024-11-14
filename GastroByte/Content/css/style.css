@@ -20,6 +20,33 @@ body {
     background: #fff;
 }
 
+
+/* Estilo para la alerta */
+.custom-alert {
+    background-color: #FBB448; /* Color verde claro para éxito */
+    color: #155724; /* Texto verde oscuro */
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botón de cierre */
+.close-alert {
+    color: #155724;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+
+
 .body-content {
     margin-top: 27px; /* Ajusta el valor según sea necesario */
     font-family: "Lato", Arial, sans-serif;
@@ -28,7 +55,6 @@ body {
     line-height: 1.7;
     color: #777;
     background: #fff;
-    
     padding: 0; /* Elimina el relleno (opcional) */
     width: 100vw; /* Asegura que ocupe el ancho completo de la ventana */
 }

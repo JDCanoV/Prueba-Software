@@ -4,9 +4,19 @@
     Layout = "~/Views/Shared/_Layout_cliente.cshtml";
 }
 
+<br />
+<br />
 
-<br />
-<br />
-<h4>Bienvenido,Estimado @ViewBag.UserName</h4>
-<h4> @userRole</h4>
+<h4>Bienvenido, estimado @ViewBag.UserName</h4>
+<h4>Rol: @userRole</h4>
+@{
+    if (TempData["SuccessMessage"] != null)
+    {
+        <div id="customAlert" class="custom-alert">
+            @TempData["SuccessMessage"]
+            <span id="closeAlert" class="close-alert">&times;</span>
+        </div>
+    }
+}
+
 
