@@ -15,12 +15,31 @@ namespace GastroByte.Controllers
     {
         private readonly MenuService _menuService;
         private readonly ReservaService _reservaService;
+        private readonly UsuarioService _usuarioService;
 
         public AdministradorController()
         {
             _menuService = new MenuService();
             _reservaService = new ReservaService();
+            _usuarioService = new UsuarioService();
         }
+
+        public ActionResult Index()
+        {
+            // Verifica si la sesión está activa y obtiene los datos
+            if (Session["UserName"] != null && Session["UserRole"] != null)
+            {
+                ViewBag.UserName = Session["UserName"].ToString();
+                ViewBag.UserRole = (int)Session["UserRole"];
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
+
+            return View();
+        }
+
 
         // ================================
         // Funcionalidades de Menú
@@ -91,6 +110,55 @@ namespace GastroByte.Controllers
             return View(menu);
         }
 
+        public ActionResult CreateUsuario()
+        {
+            UsuarioDto user = new UsuarioDto
+            {
+                Response = 0, // Inicializa Response en 0 o algún valor por defecto
+                Message = string.Empty // Inicializa Message como una cadena vacía
+            };
+            return View(user);
+        }
+
+        [HttpPost]
+       
+        public ActionResult CreateUsuario(UsuarioDto newUser)
+        {
+            if (newUser == null)
+            {
+                newUser = new UsuarioDto();
+                newUser.Message = "El modelo de usuario no se envió correctamente.";
+                return View(newUser);
+            }
+
+            try
+            {
+                UsuarioService userService = new UsuarioService();
+                UsuarioDto userResponse = userService.CreateUser(newUser);
+
+                if (userResponse.Response == 1)
+                {
+                    return RedirectToAction("IndexUsuario", "Administrador");
+                }
+                else
+                {
+                    // Asegúrate de que `Message` tenga un valor
+                    if (string.IsNullOrEmpty(userResponse.Message))
+                    {
+                        userResponse.Message = "Error al crear el usuario. Por favor, inténtalo nuevamente.";
+                    }
+                    return View(userResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                // En caso de excepción, devuelves el modelo con un mensaje de error
+                newUser.Message = "Ocurrió un error inesperado: " + ex.Message; // Muestra el mensaje de la excepción
+                newUser.Response = 0;
+                return View(newUser);
+            }
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteMenu(int id)
@@ -116,6 +184,12 @@ namespace GastroByte.Controllers
         {
             var reservas = _reservaService.GetAllReservas();
             return View(reservas);
+        }
+
+        public ActionResult IndexUsuario()
+        {
+            var user = _usuarioService.GetAllUsuario();
+            return View(user);
         }
 
         // Acción para cargar los datos de una reserva específica para editar
@@ -234,7 +308,7 @@ namespace GastroByte.Controllers
                     table.AddCell(new PdfPCell(new Phrase(reserva.documento, cellFont)) { BackgroundColor = backgroundColor });
                     table.AddCell(new PdfPCell(new Phrase(reserva.nombre, cellFont)) { BackgroundColor = backgroundColor });
                     table.AddCell(new PdfPCell(new Phrase(reserva.email, cellFont)) { BackgroundColor = backgroundColor });
-                    table.AddCell(new PdfPCell(new Phrase(DateTime.Parse(reserva.fecha).ToString("dd/MM/yyyy"), cellFont)) { BackgroundColor = backgroundColor });
+                    table.AddCell(new PdfPCell(new Phrase(reserva.fecha.ToString("dd/MM/yyyy"), cellFont)) { BackgroundColor = backgroundColor });
                     table.AddCell(new PdfPCell(new Phrase(reserva.hora, cellFont)) { BackgroundColor = backgroundColor });
 
                     // Alternar el color para la siguiente fila

@@ -140,6 +140,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\AsistenteController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
@@ -333,14 +335,22 @@
     <Content Include="Views\Usuario\index.cshtml" />
     <Content Include="Views\Usuario\Editar.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Administrador\EditReserva.cshtml" />
-    <Content Include="Views\Administrador\IndexReservas.cshtml" />
-    <Content Include="Views\Administrador\CreateMenu.cshtml" />
-    <Content Include="Views\Administrador\IndexMenu.cshtml" />
-    <Content Include="Views\Administrador\EditMenu.cshtml" />
+    <Content Include="Views\Asistente\EditReserva.cshtml" />
+    <Content Include="Views\Asistente\IndexReservas.cshtml" />
+    <Content Include="Views\Asistente\CreateMenu.cshtml" />
+    <Content Include="Views\Asistente\IndexMenu.cshtml" />
+    <Content Include="Views\Asistente\EditMenu.cshtml" />
     <Content Include="Views\Shared\_Layout_admin.cshtml" />
     <Content Include="Views\Administrador\ReporteReservas.cshtml" />
     <Content Include="Views\Administrador\ListaReservas.cshtml" />
+    <Content Include="Views\Shared\AccessDenied.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\Administrador\IndexUsuario.cshtml" />
+    <Content Include="Views\Asistente\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_asistente.cshtml" />
+    <Content Include="Views\Administrador\CreateUsuario.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_cliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

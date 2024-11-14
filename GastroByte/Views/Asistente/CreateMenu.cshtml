@@ -2,12 +2,12 @@
 
 @{
     ViewBag.Title = "Crear Nuevo Platillo";
-    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+    Layout = "~/Views/Shared/_Layout_asistente.cshtml";
 }
 
 <h2>Crear Nuevo Platillo</h2>
 
-@using (Html.BeginForm("CreateMenu", "Administrador", FormMethod.Post))
+@using (Html.BeginForm("CreateMenu", "Asistente", FormMethod.Post))
 {
     @Html.AntiForgeryToken() <!-- Agregar este token -->
 
@@ -30,5 +30,5 @@
     </div>
 
     <button type="submit"  class="btn btn-primary">Guardar</button>
-    <a href="@Url.Action("IndexMenu", "Administrador")" class="btn btn-secondary">Cancelar</a>
+    <a href="@Url.Action("IndexMenu", "Asistente")" class="btn btn-secondary">Cancelar</a>
 }

@@ -46,17 +46,17 @@
                 <!-- Alinea los elementos en el centro -->
                 <div class="col-md-4 col-xs-12">
                     <div id="gtco-logo">
-                        <a href="@Url.Action("Index", "Administrador")">GASTROBYTE <em>.</em></a>
+                        <a href="@Url.Action("Index", "Asistente")">GASTROBYTE <em>.</em></a>
                     </div>
                 </div>
                 <div class="col-md-8 text-right menu-1">
                     <ul class="list-inline">
                         <!-- Cambiar a list-inline para que los elementos estén en la misma línea -->
-                        <li class="list-inline-item btn-cta"><a href="@Url.Action("IndexUsuario", "Administrador")"><span>Gestion de Usuarios</span></a></li>
-                        <li class="list-inline-item btn-cta"><a href="@Url.Action("ReporteReservas", "Administrador")"><span>Reportes reservas</span></a></li>
+                        <li class="list-inline-item btn-cta"><a href="@Url.Action("IndexReservas", "Asistente")"><span>Gestion de Reservas</span></a></li>
+                        <li class="list-inline-item btn-cta"><a href="@Url.Action("IndexMenu", "Asistente")"><span>Gestion de Menus</span></a></li>
                         <li class="list-inline-item btn-cta"><a href="@Url.Action("Logout", "Usuario")"><span>Cerrar Sesión</span></a></li>
-                            
-                        
+
+
                     </ul>
                 </div>
             </div>
@@ -100,3 +100,4 @@
     <script src="@Url.Content("~/Content/js/main.js")"></script>
 </body>
 </html>
+

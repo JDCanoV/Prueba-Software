@@ -2,13 +2,14 @@
 
 @{
     ViewBag.Title = "Editar Reserva";
-    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+    Layout = "~/Views/Shared/_Layout_asistente.cshtml";
 }
 
 <h2>Editar Reserva</h2>
 
-@using (Html.BeginForm("EditReserva", "Administrador", FormMethod.Post))
+@using (Html.BeginForm("EditReserva", "Asistente", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.id_reservacion)
 
     <div class="form-group">
@@ -31,7 +32,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.fecha)
-        @Html.TextBoxFor(m => m.fecha, new { @class = "form-control", type = "date" })
+        @Html.TextBoxFor(m => m.fecha, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
         @Html.ValidationMessageFor(m => m.fecha)
     </div>
 
@@ -42,5 +43,5 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-    <a href="@Url.Action("IndexReservas", "Administrador")" class="btn btn-secondary">Cancelar</a>
+    <a href="@Url.Action("IndexReservas", "Asistente")" class="btn btn-secondary">Cancelar</a>
 }

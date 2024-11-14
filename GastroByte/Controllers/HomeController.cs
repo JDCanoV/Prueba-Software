@@ -62,7 +62,12 @@ namespace GastroByte.Controllers
             }
         }
 
-        [AuthorizeRole(1)]
+        public ActionResult AccessDenied()
+        {
+            return View();
+        }
+
+        [AuthorizeRole(2)]
         public ActionResult About()
         {
             DBContextUtility dbUtility = new DBContextUtility();

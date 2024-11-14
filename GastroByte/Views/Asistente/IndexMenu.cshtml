@@ -3,12 +3,12 @@
 
 @{
     ViewBag.Title = "Lista de Menus";
-    Layout = "~/Views/Shared/_Layout_admin.cshtml"; 
+    Layout = "~/Views/Shared/_Layout_asistente.cshtml"; 
 }
 
 <h2>Lista de Menus</h2>
 
-<a href="@Url.Action("CreateMenu", "Administrador")" class="btn btn-primary mb-3">Crear Platillo</a>
+<a href="@Url.Action("CreateMenu", "Asistente")" class="btn btn-primary mb-3">Crear Platillo</a>
 
 <table class="table">
     <thead>
@@ -29,8 +29,8 @@
                 <td>@menu.descripcion</td>
                 <td>@menu.precio</td>
                 <td>
-                    <a href="@Url.Action("EditMenu", "Administrador", new { id = menu.id_platillo })" class="btn btn-success">Editar</a>
-                    @using (Html.BeginForm("DeleteMenu", "Administrador", new { id = menu.id_platillo }, FormMethod.Post))
+                    <a href="@Url.Action("EditMenu", "Asistente", new { id = menu.id_platillo })" class="btn btn-success">Editar</a>
+                    @using (Html.BeginForm("DeleteMenu", "Asistente", new { id = menu.id_platillo }, FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
                         <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este platillo?');">Eliminar</button>

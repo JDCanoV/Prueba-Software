@@ -136,9 +136,9 @@ namespace GastroByte.Controllers
                     switch (userResponse.id_rol)
                     {
                         case 1:
-                            return RedirectToAction("IndexMenu", "Administrador");
+                            return RedirectToAction("Index", "Administrador");
                         case 2:
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "Asistente");
                         case 3:
                             return RedirectToAction("Index", "Home");
                         default:

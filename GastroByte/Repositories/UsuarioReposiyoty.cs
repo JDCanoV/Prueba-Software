@@ -101,6 +101,38 @@ namespace GastroByte.Repositories
         }
 
 
-        
+        public IEnumerable<UsuarioDto> GetAllUsuarios()
+        {
+            List<UsuarioDto> user = new List<UsuarioDto>();
+            DBContextUtility connection = new DBContextUtility();
+            connection.Connect();
+
+            string SQL = "SELECT * FROM Gastrobyte.dbo.[Usuario]";
+
+            using (SqlCommand command = new SqlCommand(SQL, connection.CONN()))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user.Add(new UsuarioDto
+                        {
+                            id_usuario = (int)reader["id_usuario"],
+                            nombre = reader["nombre"].ToString(),
+                            apellidos = reader["apellidos"].ToString(),
+                            numero_documento = reader["numero_documento"].ToString(),
+                            correo_electronico = reader["correo_electronico"].ToString(),
+                            id_rol = (int)reader["id_rol"],
+                        });
+                    }
+                }
+            }
+
+            connection.Disconnect();
+            return user;
+        }
+
+
+
     }
 }

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GastroByte.Dtos.UsuarioDto>
+
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2>Lista de Usuarios</h2>
+
+<a href="@Url.Action("CreateUsuario", "Administrador")" class="btn btn-primary mb-3">Crear Usuario</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Usuario</th>
+            <th>nombre</th>
+            <th>apellidos</th>
+            <th>numero_documento</th>
+            <th>correo_electronico</th>
+            <th>id_rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.id_usuario</td>
+                <td>@user.nombre</td>
+                <td>@user.apellidos</td>
+                <td>@user.numero_documento</td>
+                <td>@user.correo_electronico</td>
+                <td>@user.id_rol</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+

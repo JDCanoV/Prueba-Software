@@ -11,13 +11,17 @@ namespace GastroByte.Dtos
     {
         public int id_reservacion { get; set; }
         public int id_usuario { get; set; }
+
+         [Required(ErrorMessage = "La cantidad de personas es obligatoria.")]
         public string numero_personas { get; set; } = string.Empty;
 
         public string nombre { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "La fecha es obligatoria.")]
 
-        public string fecha { get; set; } = string.Empty;
+        public DateTime fecha { get; set; }
+
+        [Required(ErrorMessage = "La hora es obligatoria.")]
         public string hora { get; set; } = string.Empty;
         public int id_estado { get; set; }
         public string mesa { get; set; } = string.Empty;
@@ -32,5 +36,6 @@ namespace GastroByte.Dtos
 
         public string documento { get; set; } = string.Empty;
 
+        
     }
 }

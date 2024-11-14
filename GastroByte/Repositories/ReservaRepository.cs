@@ -56,7 +56,7 @@ namespace GastroByte.Repositories
                         {
                             id_reservacion = (int)reader["id_reservacion"],
                             documento = reader["documento"].ToString(),
-                            fecha = reader["fecha"].ToString(),
+                            fecha = Convert.ToDateTime(reader["fecha"]),
                             email = reader["email"].ToString(),
                             nombre = reader["nombre"].ToString(),
                             numero_personas = reader["numero_personas"].ToString(),
@@ -91,7 +91,7 @@ namespace GastroByte.Repositories
                         {
                             id_reservacion = (int)reader["id_reservacion"],
                             documento = reader["documento"].ToString(),
-                            fecha = reader["fecha"].ToString(),
+                            fecha = Convert.ToDateTime(reader["fecha"]),
                             email = reader["email"].ToString(),
                             nombre = reader["nombre"].ToString(),
                             numero_personas = reader["numero_personas"].ToString(),
@@ -125,7 +125,7 @@ namespace GastroByte.Repositories
                         {
                             id_reservacion = (int)reader["id_reservacion"],
                             documento = reader["documento"].ToString(),
-                            fecha = reader["fecha"].ToString(),
+                            fecha = Convert.ToDateTime(reader["fecha"]),
                             email = reader["email"].ToString(),
                             nombre = reader["nombre"].ToString(),
                             numero_personas = reader["numero_personas"].ToString(),

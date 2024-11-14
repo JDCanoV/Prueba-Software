@@ -10,6 +10,8 @@ namespace GastroByte.Services
 {
     public class UsuarioService
     {
+        
+
         public UsuarioDto CreateUser(UsuarioDto userModel)
         {
             UsuarioDto responseUserDto = new UsuarioDto();
@@ -55,6 +57,12 @@ namespace GastroByte.Services
                 responseUserDto.Message = e.InnerException.ToString();
                 return responseUserDto;
             }
+        }
+
+        public IEnumerable<UsuarioDto> GetAllUsuario()
+        {
+            UsuarioReposiyoty userReposiyoty = new UsuarioReposiyoty();
+            return userReposiyoty.GetAllUsuarios(); // Esto ahora debería funcionar correctamente
         }
         public UsuarioDto LoginUser(UsuarioDto loginUser)
         {

@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GastroByte.Dtos.ReservaDto>
 
+@{
+    ViewBag.Title = "Reporte de Reservas";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
 <h2>Resultados del Reporte de Reservas</h2>
 
 <table class="table">
@@ -21,7 +25,7 @@
                 <td>@reserva.documento</td>
                 <td>@reserva.nombre</td>
                 <td>@reserva.email</td>
-                <td>@DateTime.Parse(reserva.fecha).ToString("dd/MM/yyyy")</td>
+                <td>@reserva.fecha.ToString("yyyy-MM-dd")</td>
                 <td>@reserva.hora</td>
             </tr>
         }

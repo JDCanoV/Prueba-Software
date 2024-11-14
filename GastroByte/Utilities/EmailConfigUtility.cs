@@ -74,7 +74,7 @@ namespace GastroByte.Utilities
                 table.WidthPercentage = 90;
                 table.SetWidths(new float[] { 1, 2 });
 
-                AgregarFila(table, "Fecha de la Reserva:", "\n"+ reserva.fecha, normalFont);
+                AgregarFila(table, "Fecha de la Reserva:", "\n"+ reserva.fecha.ToString("yyyy-MM-dd"), normalFont);
                 AgregarFila(table, "Hora de la Reserva:", reserva.hora, normalFont);
                 AgregarFila(table, "Número de Personas:", "\n" + reserva.numero_personas, normalFont);
                 AgregarFila(table, "Cliente:", reserva.nombre, normalFont);
