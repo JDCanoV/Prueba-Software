@@ -1,0 +1,89 @@
+﻿@model IEnumerable<GastroByte.Dtos.MenuDto>
+@using GastroByte.Services
+@{
+    ViewBag.Title = "Lista de Menus";
+    Layout = "~/Views/Shared/_Layout_cliente.cshtml";
+    var carritoService = new CarritoService();
+}
+
+<h2>Lista de Menus</h2>
+
+
+<div class="mb-3">
+    <a href="@Url.Action("IndexCarrito", "Cliente")" class="btn btn-success">Ver Carrito</a>
+    <button class="btn btn-danger" onclick="limpiarCarrito()">Limpiar Carrito</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Platillo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var menu in Model)
+        {
+            <tr>
+                <td>@menu.id_platillo</td>
+                <td>@menu.nombre_platillo</td>
+                <td>@menu.descripcion</td>
+                <td>@menu.precio</td>
+                <td>
+                    
+                    
+                    <button class="btn btn-primary" onclick="agregarAlCarrito(@menu.id_platillo, '@menu.nombre_platillo', '@menu.descripcion', '@menu.precio')">Agregar al Carrito</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function agregarAlCarrito(id, nombre, descripcion, precio) {
+        var producto = {
+            id_platillo: id,
+            nombre_platillo: nombre,
+            descripcion: descripcion,
+            precio: precio
+        };
+
+        $.ajax({
+            url: '@Url.Action("AgregarAlCarrito", "cliente")',
+            type: 'POST',
+            data: JSON.stringify(producto),
+            contentType: 'application/json; charset=utf-8',
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message); // Mostrar mensaje de confirmación
+                } else {
+                    alert("Error al agregar el producto al carrito.");
+                }
+            },
+            error: function() {
+                alert("Error en la solicitud para agregar el producto al carrito.");
+            }
+        });
+    }
+
+    function limpiarCarrito() {
+        $.ajax({
+            url: '@Url.Action("LimpiarCarrito", "Cliente")',
+            type: 'POST',
+            success: function(response) {
+                if (response.success) {
+                    alert("Carrito limpiado");
+                    window.location.reload(); // Recargar la página para reflejar el cambio
+                } else {
+                    alert("Error al limpiar el carrito.");
+                }
+            },
+            error: function() {
+                alert("Error en la solicitud para limpiar el carrito.");
+            }
+        });
+    }
+</script>

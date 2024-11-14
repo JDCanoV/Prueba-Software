@@ -40,12 +40,19 @@ namespace GastroByte.Controllers
                 var userService = new UsuarioService();
                 var userResponse = userService.LoginUser(loginUser);
 
+
+                // Redirige al returnUrl si está definido, o al home en caso contrario
+                if (!string.IsNullOrEmpty(returnUrl))
+                    return Redirect(returnUrl); // Si hay una URL de retorno, redirige a esa
                 // Si la respuesta indica que el login fue exitoso (Response == 1)
                 if (userResponse.Response == 1)
                 {
                     Session["UserID"] = userResponse.id_usuario;
                     Session["UserName"] = userResponse.nombre;
                     Session["UserRole"] = userResponse.id_rol;
+                    Session["UserDocumento"] = userResponse.numero_documento;
+                    Session["UserTelefono"] = userResponse.telefono;
+                    Session["UserCorreo"] = userResponse.correo_electronico;
                     // Redirige a diferentes páginas según el rol del usuario
                     switch (userResponse.id_rol)
                     {
@@ -54,21 +61,15 @@ namespace GastroByte.Controllers
                         case 2:
                             return RedirectToAction("Index", "Asistente");
                         case 3:
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "Cliente");
                         default:
                             // Si el rol no coincide, redirige a una página genérica o de error
                             return RedirectToAction("Login", "Usuario");
                     
-                    Session["UserDocumento"] = userResponse.numero_documento;
-                    Session["UserTelefono"] = userResponse.telefono;
-                    Session["UserCorreo"] = userResponse.correo_electronico;
+                    
 
-                // Redirige al returnUrl si está definido, o al home en caso contrario
-                if (!string.IsNullOrEmpty(returnUrl))
-                        return Redirect(returnUrl); // Si hay una URL de retorno, redirige a esa
+               
 
-                    // Si no hay returnUrl, redirige al home
-                    return RedirectToAction("Index", "Home");
                 }
             }
                 else
@@ -97,11 +98,7 @@ namespace GastroByte.Controllers
 
         // Método para cerrar sesión
         // Esta acción limpia la sesión del usuario y redirige a la página de login
-        public ActionResult Logout()
-        {
-            Session.Clear(); // Limpia toda la sesión del usuario
-            return RedirectToAction("Login", "Usuario"); // Redirige a la página de login
-        }
+        
 
         // Vista de creación de usuario (GET)
         // Muestra el formulario para crear un nuevo usuario

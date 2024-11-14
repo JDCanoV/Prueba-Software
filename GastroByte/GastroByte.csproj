@@ -362,8 +362,9 @@
     <Content Include="Views\Administrador\CreateUsuario.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_cliente.cshtml" />
-    <Content Include="Views\Administrador\IndexCarrito.cshtml" />
-    <Content Include="Views\Administrador\ConfirmarPago.cshtml" />
+    <Content Include="Views\Cliente\IndexCarrito.cshtml" />
+    <Content Include="Views\Cliente\ConfirmarPago.cshtml" />
+    <Content Include="Views\Cliente\IndexMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

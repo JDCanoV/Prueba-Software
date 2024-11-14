@@ -69,7 +69,7 @@ namespace GastroByte.Controllers
                 if (createdMenu.Response == 1)
                 {
                     TempData["SuccessMessage"] = "Platillo creado correctamente.";
-                    return RedirectToAction("IndexMenu", "Administrador");
+                    return RedirectToAction("IndexMenu", "Asistente");
                 }
                 ModelState.AddModelError("", createdMenu.Message);
             }
