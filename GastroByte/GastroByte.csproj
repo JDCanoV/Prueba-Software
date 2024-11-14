@@ -344,7 +344,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\index.cshtml" />
-    <Content Include="Views\Usuario\Editar.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Asistente\EditReserva.cshtml" />
     <Content Include="Views\Asistente\IndexReservas.cshtml" />

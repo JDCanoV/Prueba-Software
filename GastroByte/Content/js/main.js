@@ -23,6 +23,7 @@
 		}
 	};
 
+	
 
 	document.addEventListener("DOMContentLoaded", function () {
 		var closeBtn = document.getElementById("closeAlert");

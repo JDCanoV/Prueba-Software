@@ -129,6 +129,7 @@ namespace GastroByte.Controllers
                 // Si la respuesta indica que la creación fue exitosa (Response == 1)
                 if (userResponse.Response == 1)
                 {
+
                     return RedirectToAction("Index"); // Redirige al index de usuario
                 }
                 else
