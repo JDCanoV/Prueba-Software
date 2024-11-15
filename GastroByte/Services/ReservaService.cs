@@ -67,6 +67,7 @@ namespace GastroByte.Services
             return reserReposiyoty.GetReservaById(id); // Este método también debería funcionar
         }
 
+        
         // Método para actualizar una reserva
         public ReservaDto UpdateReserva(ReservaDto reservaModel)
         {

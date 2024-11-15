@@ -177,6 +177,5 @@ namespace GastroByte.Repositories
             connection.Disconnect();
             return updatedReserva; // Devolvemos el objeto actualizado o null si no hubo actualización
         }
-   
     }
 }

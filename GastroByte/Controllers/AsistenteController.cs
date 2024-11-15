@@ -137,7 +137,7 @@ namespace GastroByte.Controllers
             return View(reservas);
         }
 
-        
+
 
         // Acción para cargar los datos de una reserva específica para editar
         public ActionResult EditReserva(int id)
@@ -150,7 +150,6 @@ namespace GastroByte.Controllers
             return View(reserva);
         }
 
-        // Acción para actualizar la reserva después de ser editada
         [HttpPost]
         public ActionResult EditReserva(ReservaDto reserva)
         {
@@ -160,7 +159,6 @@ namespace GastroByte.Controllers
             }
 
             var updatedReserva = _reservaService.UpdateReserva(reserva);
-
             if (updatedReserva != null)
             {
                 TempData["SuccessMessage"] = "Reserva actualizada correctamente.";
@@ -171,11 +169,12 @@ namespace GastroByte.Controllers
             return View(reserva);
         }
 
-       
-       
 
-        
-        
+
+
+
+
+
 
     }
 }
