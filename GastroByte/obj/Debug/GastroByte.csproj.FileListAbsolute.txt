@@ -356,3 +356,7 @@ C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\BouncyCastle.Cryptog
 C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\itextsharp.dll
 C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\BouncyCastle.Cryptography.xml
 C:\Users\hp\Documents\GitHub\Prueba-Software\GastroByte\bin\itextsharp.xml
+C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\bin\BouncyCastle.Cryptography.dll
+C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\bin\itextsharp.dll
+C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\bin\BouncyCastle.Cryptography.xml
+C:\Users\jdcan\Desktop\GastroByte - copia\GastroByte\bin\itextsharp.xml

@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\utilities\\dbcontextutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\utilities\\dbcontextutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|c:\\users\\jdcan\\desktop\\gastrobyte - copia\\gastrobyte\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\gastrobyte\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD6B6B1-0BA9-42D3-92D4-C4BE31C490A4}|GastroByte\\GastroByte.csproj|solutionrelative:gastrobyte\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DBContextUtility.cs",
+              "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Utilities\\DBContextUtility.cs",
+              "RelativeDocumentMoniker": "GastroByte\\Utilities\\DBContextUtility.cs",
+              "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Utilities\\DBContextUtility.cs",
+              "RelativeToolTip": "GastroByte\\Utilities\\DBContextUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:10:45.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Usuario\\Create.cshtml",
+              "RelativeDocumentMoniker": "GastroByte\\Views\\Usuario\\Create.cshtml",
+              "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Usuario\\Create.cshtml",
+              "RelativeToolTip": "GastroByte\\Views\\Usuario\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-16T12:08:38.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "GastroByte\\Views\\Home\\Contact.cshtml",
@@ -30,18 +64,17 @@
               "RelativeToolTip": "GastroByte\\Views\\Home\\Contact.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T01:01:13.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T01:01:13.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "GastroByte\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\jdcan\\Desktop\\GastroByte - copia\\GastroByte\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "GastroByte\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAUwOMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAUwOMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-14T00:25:46.786Z",
               "EditorCaption": ""

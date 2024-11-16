@@ -8,10 +8,10 @@ namespace GastroByte.Utilities
 {
     public class DBContextUtility
     {
-        static string SERVER = "DESKTOP-BJ4E2PT";
+        static string SERVER = "LAPTOP-AA823G2C";
         static string DB_NAME = "Gastrobyte";
-        static string DB_USER = "oscar";
-        static string DB_PASSWORD = "123456789" +
+        static string DB_USER = "Dios2";
+        static string DB_PASSWORD = "1234" +
             "" +
             "" +
             "";
