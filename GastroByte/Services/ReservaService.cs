@@ -67,11 +67,11 @@ namespace GastroByte.Services
             return reserReposiyoty.GetReservaById(id); // Este método también debería funcionar
         }
 
-        
+
         // Método para actualizar una reserva
-        public ReservaDto UpdateReserva(ReservaDto reservaModel)
+        public ReservaDto UpdateReserva(ReservaDto reservaModel, int userId)
         {
-            return reserReposiyoty.UpdateReserva(reservaModel); // Asegúrate de que este método exista en tu repositorio
+            return reserReposiyoty.UpdateReserva(reservaModel,userId); // Asegúrate de que este método exista en tu repositorio
         }
     }
 }

@@ -4,8 +4,10 @@
     Layout = "~/Views/Shared/_Layout_cliente.cshtml";
 }
 
-<h2>Carrito de Compras</h2>
-<a href="@Url.Action("IndexMenu", "Cliente")" class="btn btn-secondary">Volver al menu</a>
+<h2 class="text-center">Carrito de Compras</h2>
+
+<a href="@Url.Action("IndexMenu", "Cliente")" class="btn btn-secondary mb-3">Volver al Menú</a>
+
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success">
@@ -22,12 +24,12 @@
 
 @if (Model.Any())
 {
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
                 <th>ID Platillo</th>
                 <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Descripción</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Acciones</th>
@@ -40,44 +42,53 @@
                     <td>@producto.id_platillo</td>
                     <td>@producto.nombre_platillo</td>
                     <td>@producto.descripcion</td>
-                    <td>@producto.precio</td>
+                    <td>$@producto.precio</td>
                     <td>@producto.cantidad</td>
                     <td>
-                        <button class="btn btn-danger" onclick="quitarDelCarrito(@producto.id_platillo)">Quitar</button>
+                        <button class="btn btn-danger" data-id="@producto.id_platillo" data-url="@Url.Action("QuitarDelCarrito", "Cliente")">
+                            <i class="fa fa-trash"></i> Quitar
+                        </button>
+
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+
+    <div class="total-container text-right mt-4">
+        <h4>Total: <strong>$@Model.Sum(item => item.precio * item.cantidad)</strong></h4>
+        <a href="@Url.Action("ConfirmarPago", "Cliente")"
+           class="btn btn-primary btn-lg btn-block">
+            Confirmar y Pagar
+        </a>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning text-center">
+        <h4>Tu carrito está vacío.</h4>
+        <p>Explora nuestro menú y agrega tus platillos favoritos.</p>
+        <a href="@Url.Action("IndexMenu", "Cliente")" class="btn btn-primary">Ver Menú</a>
+    </div>
 }
 
-<div class="total-container">
-    <h4>Total: $@Model.Sum(item => item.precio * item.cantidad)</h4>
-    <a href="@Url.Action("ConfirmarPago", "Cliente")"
-       class="btn btn-primary btn-lg btn-block"
-      >Pagar</a>
+<!-- Modal para mostrar mensajes -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Información</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="confirmationModalMessage">
+                <!-- Mensaje dinámico -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-
-<script>
-    function quitarDelCarrito(id) {
-        $.ajax({
-            url: '@Url.Action("QuitarDelCarrito", "Cliente")',
-            type: 'POST',
-            data: JSON.stringify({ id_platillo: id }),
-            contentType: 'application/json; charset=utf-8',
-            success: function(response) {
-                if (response.success) {
-                    alert(response.message); // Mensaje de confirmación
-                    window.location.reload(); // Recargar la página para actualizar el carrito
-                } else {
-                    alert("Error al quitar el producto del carrito.");
-                }
-            },
-            error: function() {
-                alert("Error en la solicitud para quitar el producto del carrito.");
-            }
-        });
-    }
-</script>

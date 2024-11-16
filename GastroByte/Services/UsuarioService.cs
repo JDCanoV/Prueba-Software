@@ -64,6 +64,7 @@ namespace GastroByte.Services
             UsuarioReposiyoty userReposiyoty = new UsuarioReposiyoty();
             return userReposiyoty.GetAllUsuarios(); // Esto ahora debería funcionar correctamente
         }
+        
         public UsuarioDto LoginUser(UsuarioDto loginUser)
         {
             

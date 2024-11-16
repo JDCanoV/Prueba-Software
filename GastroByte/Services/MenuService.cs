@@ -56,9 +56,9 @@ namespace GastroByte.Services
         }
 
         // Método para actualizar una reserva
-        public MenuDto UpdateMenu(MenuDto menuModel)
+        public MenuDto UpdateMenu(MenuDto menuModel,int iduser)
         {
-            return menuRepository.UpdateMenu(menuModel); // Asegúrate de que este método exista en tu repositorio
+            return menuRepository.UpdateMenu(menuModel,iduser); // Asegúrate de que este método exista en tu repositorio
         }
         public bool DeleteMenu(int id)
         {

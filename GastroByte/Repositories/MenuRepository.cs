@@ -95,7 +95,7 @@ namespace GastroByte.Repositories
             return menu;
         }
 
-        public MenuDto UpdateMenu(MenuDto MenuModel)
+        public MenuDto UpdateMenu(MenuDto MenuModel, int userId)
         {
             MenuDto updatedMenu = null;
             DBContextUtility connection = new DBContextUtility();
@@ -106,6 +106,33 @@ namespace GastroByte.Repositories
 
             using (SqlCommand command = new SqlCommand(SQL, connection.CONN()))
             {
+                // Insertar el UserID en la tabla temporal
+                using (SqlCommand tempUserIdCommand = new SqlCommand("INSERT INTO TempUserId (UserId) VALUES (@UserId)", connection.CONN()))
+                {
+                    tempUserIdCommand.Parameters.AddWithValue("@UserId", userId); // Usar el UserID desde el controlador
+                    tempUserIdCommand.ExecuteNonQuery();
+                }
+
+                // Establecer el UserID en CONTEXT_INFO, si es necesario
+                try
+                {
+                    using (SqlCommand contextCommand = new SqlCommand("SET CONTEXT_INFO @UserID", connection.CONN()))
+                    {
+                        byte[] userIdBytes = BitConverter.GetBytes(userId); // Usar el valor real del usuario
+
+                        // Agregar el parámetro y ejecutar el comando
+                        contextCommand.Parameters.AddWithValue("@UserID", userIdBytes);
+                        contextCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Captura cualquier excepción
+                    Console.WriteLine($"Error al establecer CONTEXT_INFO: {ex.Message}");
+                    Console.WriteLine($"Detalles: {ex.StackTrace}");
+                    throw; // Relanzar la excepción para que sea manejada más arriba
+                }
+
                 command.Parameters.AddWithValue("@id", MenuModel.id_platillo);
                 command.Parameters.AddWithValue("@nombre_platillo", MenuModel.nombre_platillo);
                 command.Parameters.AddWithValue("@descripcion", MenuModel.descripcion);

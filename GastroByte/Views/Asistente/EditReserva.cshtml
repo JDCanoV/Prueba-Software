@@ -1,4 +1,4 @@
-﻿﻿@model GastroByte.Dtos.ReservaDto
+﻿@model GastroByte.Dtos.ReservaDto
 
 @{
     ViewBag.Title = "Editar Reserva";
@@ -32,7 +32,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.fecha)
-        @Html.TextBoxFor(m => m.fecha, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.TextBoxFor(m => m.fecha, new { @class = "form-control", type = "date" })
         @Html.ValidationMessageFor(m => m.fecha)
     </div>
 

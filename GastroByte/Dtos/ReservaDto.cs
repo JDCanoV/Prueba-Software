@@ -12,7 +12,7 @@ namespace GastroByte.Dtos
         public int id_reservacion { get; set; }
         public int id_usuario { get; set; }
 
-         [Required(ErrorMessage = "La cantidad de personas es obligatoria.")]
+         
         public string numero_personas { get; set; } = string.Empty;
 
         public string nombre { get; set; } = string.Empty;

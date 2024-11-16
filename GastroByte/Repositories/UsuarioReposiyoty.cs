@@ -1,7 +1,9 @@
-﻿using GastroByte.Dtos;
+﻿
+using GastroByte.Dtos;
 using GastroByte.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -13,14 +15,15 @@ namespace GastroByte.Repositories
     {
         public int CreateUser(UsuarioDto user)
         {
-            int comando = 0;
+            int resultado = 0;
             DBContextUtility Connection = new DBContextUtility();
             Connection.Connect();
-            string SQL = "INSERT INTO Gastrobyte.dbo.[Usuario] (id_rol,id_estado,nombre,contraseña,telefono,apellidos,tipo_documento,numero_documento,correo_electronico)" +
-                          "VALUES ( @id_rol,@id_estado,@nombre,@contraseña,@telefono,@apellidos,@tipo_documento,@numero_documento,@correo_electronico);";
 
-            using (SqlCommand command = new SqlCommand(SQL, Connection.CONN()))
+            using (SqlCommand command = new SqlCommand("sp_CrearUsuario", Connection.CONN()))
             {
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Agregar los parámetros
                 command.Parameters.AddWithValue("@id_rol", user.id_rol);
                 command.Parameters.AddWithValue("@id_estado", user.id_estado);
                 command.Parameters.AddWithValue("@nombre", user.nombre);
@@ -33,18 +36,23 @@ namespace GastroByte.Repositories
 
                 try
                 {
-                    comando = command.ExecuteNonQuery();
+                    // Ejecutar el procedimiento almacenado
+                    resultado = (int)command.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
-                    // Manejo de error, registra el error
-                    // Puedes usar un logger o escribir a la consola
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine($"Error al crear usuario: {ex.Message}");
+                    resultado = -1; // Indicar que hubo un error
+                }
+                finally
+                {
+                    Connection.Disconnect();
                 }
             }
-            Connection.Disconnect();
-            return comando;
+
+            return resultado;
         }
+
         public UsuarioDto BuscarUsuarioPorNumeroDocumento(string numeroDocumento)
         {
             UsuarioDto user = null;
@@ -134,6 +142,8 @@ namespace GastroByte.Repositories
             connection.Disconnect();
             return user;
         }
+
+
 
 
 

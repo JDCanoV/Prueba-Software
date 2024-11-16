@@ -20,6 +20,7 @@ namespace GastroByte.Controllers
             _menuService = new MenuService();
             _reservaService = new ReservaService();
            
+           
         }
         // GET: Asistente
         public ActionResult Index()
@@ -39,6 +40,7 @@ namespace GastroByte.Controllers
             return View();
             
         }
+
 
 
         // ================================
@@ -97,8 +99,8 @@ namespace GastroByte.Controllers
             {
                 return View(menu);
             }
-
-            var updatedMenu = _menuService.UpdateMenu(menu);
+            int id = (int)Session["UserID"];
+            var updatedMenu = _menuService.UpdateMenu(menu,id);
 
             if (updatedMenu != null)
             {
@@ -130,16 +132,12 @@ namespace GastroByte.Controllers
         // Funcionalidades de Reservas
         // ================================
 
-        // Acción para mostrar la vista principal con la lista de reservas
         public ActionResult IndexReservas()
         {
             var reservas = _reservaService.GetAllReservas();
             return View(reservas);
         }
 
-
-
-        // Acción para cargar los datos de una reserva específica para editar
         public ActionResult EditReserva(int id)
         {
             var reserva = _reservaService.GetReservaById(id);
@@ -155,10 +153,17 @@ namespace GastroByte.Controllers
         {
             if (!ModelState.IsValid)
             {
+                // Depuración: Verifica los errores en el ModelState
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+
                 return View(reserva);
             }
-
-            var updatedReserva = _reservaService.UpdateReserva(reserva);
+            int id= (int)Session["UserID"];
+            var updatedReserva = _reservaService.UpdateReserva(reserva,id);
             if (updatedReserva != null)
             {
                 TempData["SuccessMessage"] = "Reserva actualizada correctamente.";
@@ -168,11 +173,6 @@ namespace GastroByte.Controllers
             ModelState.AddModelError("", "Error al actualizar la reserva.");
             return View(reserva);
         }
-
-
-
-
-
 
 
 

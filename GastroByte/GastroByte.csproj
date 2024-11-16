@@ -202,6 +202,7 @@
     <Content Include="Content\images\img_16.jpg" />
     <Content Include="Content\images\img_17.jpg" />
     <Content Include="Content\images\img_18.jpg" />
+    <Content Include="Content\js\carrito.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

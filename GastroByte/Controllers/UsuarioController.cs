@@ -53,6 +53,7 @@ namespace GastroByte.Controllers
                     Session["UserDocumento"] = userResponse.numero_documento;
                     Session["UserTelefono"] = userResponse.telefono;
                     Session["UserCorreo"] = userResponse.correo_electronico;
+
                     // Redirige a diferentes páginas según el rol del usuario
                     switch (userResponse.id_rol)
                     {
@@ -86,7 +87,8 @@ namespace GastroByte.Controllers
                 return View(loginUser); // Devuelve la vista con el mensaje de error
             }
         }
-       
+
+        
 
 
         // GET: Usuario/Logout

@@ -22,17 +22,17 @@
     <tbody>
         @foreach (var reserva in Model)
         {
-        <tr>
-            <td>@reserva.id_reservacion</td>
-            <td>@reserva.documento</td>
-            <td>@reserva.nombre</td>
-            <td>@reserva.email</td>
-            <td>@reserva.fecha.ToString("yyyy-MM-dd")</td>
-            <td>@reserva.hora</td>
-            <td>
-                <a href="@Url.Action("EditReserva", "Asistente", new { id = reserva.id_reservacion })" class="btn btn-success">Editar</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@reserva.id_reservacion</td>
+                <td>@reserva.documento</td>
+                <td>@reserva.nombre</td>
+                <td>@reserva.email</td>
+                <td>@reserva.fecha.ToString("yyyy-MM-dd")</td>
+                <td>@reserva.hora</td>
+                <td>
+                    <a href="@Url.Action("EditReserva", "Asistente", new { id = reserva.id_reservacion })" class="btn btn-success">Editar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
